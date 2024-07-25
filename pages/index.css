@@ -1,0 +1,25 @@
+body {
+  background-color: #000000;
+}
+
+.nav {
+  width: 880px;
+  height: 74px;
+  top: 45px;
+  left: 200px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  border-bottom: 1px solid #545454;
+  padding: 25px 200px 0 200px;
+}
+
+.profile {
+}
+
+.profile__image {
+  width: 120px;
+  height: 120px;
+  padding: 40px 200px 0;
+  opacity: 0px;
+}
