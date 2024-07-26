@@ -73,3 +73,18 @@ body {
 .profile__add-bt {
   width: 22px;
 }
+.main {
+  display: grid;
+  grid-template-areas:
+    "main__image main__image main__image"
+    "main__image main__image main__image";
+  gap: 17px 20px;
+  margin-top: 50px;
+}
+.main__image {
+  width: 282px;
+  height: 361px;
+  gap: 0px;
+  border-radius: 10px 10px 0px 0px;
+  opacity: 0px;
+}
