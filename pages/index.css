@@ -9,7 +9,7 @@ body {
 }
 
 .nav {
-  width: 880px;
+  max-width: 880px;
   height: 74px;
   gap: 0px;
   border: 1px 0px 0px 0px;
@@ -25,7 +25,7 @@ body {
 }
 
 .profile__image {
-  width: 120px;
+  max-width: 120px;
   height: 120px;
   opacity: 0px;
   border-radius: 50%;
@@ -40,20 +40,36 @@ body {
   gap: 15px;
 }
 .profile__name {
-  width: 373px;
+  max-width: 373px;
   height: 39px;
   gap: 0px;
   opacity: 0px;
   margin: 0;
+  font-family: Inter;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
 }
 .profile__description {
   margin: 0;
+  width: 415px;
+  height: 22px;
+  top: 236px;
+  left: 350px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
 }
 .profile__botton {
   margin: 0;
   padding: 0;
   border: 1px solid #ffffff;
-  width: 24px;
+  max-width: 24px;
   height: 24px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
@@ -71,7 +87,7 @@ body {
   align-items: center;
 }
 .profile__add-bt {
-  width: 22px;
+  max-width: 22px;
 }
 .main {
   display: grid;
@@ -87,4 +103,25 @@ body {
   gap: 0px;
   border-radius: 10px 10px 0px 0px;
   opacity: 0px;
+}
+.main__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  width: 282px;
+  height: 50px;
+  top: 636px;
+  left: 221px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+  border-radius: 0px 0px 10px 10px;
+  background-image: url(/images/image__like.png) no-repeat;
 }
