@@ -1,0 +1,21 @@
+.page {
+  max-width: 1280px;
+  color: #ffffff;
+  /* padding: 0 200px 0 200px; */
+  margin: 0 auto;
+  padding: 0 calc((100vw - 880px) / 2);
+}
+body {
+  background-color: #000000;
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    padding: 0 90px 0 90px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .page {
+    padding: 0 16px 0 16px;
+  }
+}
