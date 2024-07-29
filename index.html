@@ -114,5 +114,35 @@
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
     </div>
+    <div class="popup"></div>
+    <div class="popup__form">
+      <img src="./images/close__image.png" alt="close" class="popup__close" />
+    </div>
+    <form class="form">
+      <h2 class="form__title">Editar perfil</h2>
+      <fieldset class="form__fieldset">
+        <input
+          type="text"
+          class="form__input"
+          id="name"
+          name="name"
+          placeholder="Nome"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+
+        <input
+          type="text"
+          class="form__input"
+          id="description"
+          name="description"
+          placeholder="Sobre mim"
+          required
+        />
+        <button class="form__button" type="button">Salvar</button>
+      </fieldset>
+    </form>
+    <script src="./index.js"></script>
   </body>
 </html>

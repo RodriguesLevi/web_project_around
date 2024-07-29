@@ -5,3 +5,54 @@
 @import url("../blocks/main.css");
 @import url("../blocks/profile.css");
 @import url("../blocks/footer.css");
+.popup {
+}
+.popup__form {
+}
+.form {
+  width: 430px;
+  height: 330px;
+  margin-top: 195px;
+  margin-left: 425px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px 25px #00000026;
+  margin-bottom: 25px;
+}
+.form__title {
+  padding: 34px 36px 54px 64px;
+  width: 330px;
+  height: 23px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+}
+.form__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__input {
+  width: 358px;
+  border: none;
+  border-bottom: 1px solid #545454;
+  margin-bottom: 29.74px;
+}
+.form__button {
+  margin: 0;
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  gap: 0px;
+  border-radius: 2px 0px 0px 0px;
+  opacity: 0px;
+  background: #000000;
+  color: #ffffff;
+}

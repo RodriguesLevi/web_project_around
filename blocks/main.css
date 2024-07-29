@@ -5,7 +5,7 @@
   margin-top: 50px;
 }
 .main__image {
-  width: 100%;
+  max-width: 282px;
   height: 282px;
   border-radius: 10px 10px 0px 0px;
 }
@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 282px;
 }
 .main__container-title {
   padding: 25px 21px 31px 15px;
@@ -32,6 +33,9 @@
   font-weight: 900;
   line-height: 29.05px;
   text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .main__button {
   width: 21px;
@@ -43,11 +47,25 @@
 @media screen and (max-width: 1024px) {
   .main {
     gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
+  }
+  .main__image {
+    max-width: unset;
+    width: 100%;
+  }
+  .main__container {
+    max-width: unset;
   }
 }
 @media screen and (max-width: 740px) {
   .main {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .main__image {
+    /* width: 100%; */
+  }
+  .main__container {
+    /* width: 100%; */
   }
 }
