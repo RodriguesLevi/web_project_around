@@ -41,7 +41,7 @@
   line-height: 21.78px;
   text-align: left;
 }
-.profile__botton {
+.profile__button {
   margin: 0;
   padding: 0;
   border: 1px solid #ffffff;
@@ -87,5 +87,10 @@
   .profile__name {
     max-width: 196px;
     width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26.63px;
+    text-align: center;
   }
 }
