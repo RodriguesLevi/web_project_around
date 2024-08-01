@@ -6,7 +6,7 @@
 
 .profile__image {
   max-width: 120px;
-
+  width: 100%;
   border-radius: 50%;
 }
 .profile__card {
@@ -50,7 +50,13 @@
   border: 1px 0px 0px 0px;
   opacity: 0px;
 }
+.profile__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
 .profile__add {
+  background-color: transparent;
+  border: none;
   border: 2px solid #ffffff;
   min-width: 150px;
   height: 50px;
@@ -60,8 +66,18 @@
   align-items: center;
   margin-left: auto;
 }
+.profile__add:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
 .profile__add-bt {
   max-width: 22px;
+}
+
+.profile__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {

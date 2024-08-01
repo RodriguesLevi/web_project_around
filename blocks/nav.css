@@ -5,9 +5,3 @@
   border-bottom: 1px solid #545454;
   padding-top: 45px;
 }
-
-@media screen and (max-width: 1024px) {
-  .nav {
-    /* max-width: 550px; */
-  }
-}

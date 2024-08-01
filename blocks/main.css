@@ -44,6 +44,13 @@
   background-size: contain;
   border: none;
 }
+
+.main__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+/* .main__button-active{} */
+
 @media screen and (max-width: 1024px) {
   .main {
     gap: 10px;
@@ -61,11 +68,5 @@
   .main {
     grid-template-columns: 1fr;
     justify-items: center;
-  }
-  .main__image {
-    /* width: 100%; */
-  }
-  .main__container {
-    /* width: 100%; */
   }
 }

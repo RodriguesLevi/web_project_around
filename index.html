@@ -11,52 +11,19 @@
   </head>
   <body>
     <div class="page">
-      <div class="popup"></div>
-      <div class="popup__container">
-        <button class="popup__button">
-          <img
-            src="./images/close__image.png"
-            alt="close"
-            class="popup__close"
-          />
-        </button>
-        <form class="form">
-          <h2 class="form__title">Editar perfil</h2>
-          <fieldset class="form__fieldset">
-            <input
-              type="text"
-              class="form__input form__input-name"
-              id="name"
-              name="name"
-              placeholder="Nome"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-
-            <input
-              type="text"
-              class="form__input form__input-description"
-              id="description"
-              name="description"
-              placeholder="Sobre mim"
-              required
-            />
-            <button class="form__button" type="button">Salvar</button>
-          </fieldset>
-        </form>
-      </div>
       <header class="header">
         <nav class="nav">
           <img src="./images/logo_around.png" alt="imagem do logo da page" />
         </nav>
       </header>
       <section class="profile">
-        <img
-          src="./images/image_header.jpg"
-          alt=" imagem do perfil"
-          class="profile__image"
-        />
+        <div>
+          <img
+            src="./images/image_header.jpg"
+            alt=" imagem do perfil"
+            class="profile__image"
+          />
+        </div>
         <div class="profile__card">
           <h2 class="profile__name">Jacques Cousteau</h2>
           <div>
@@ -67,13 +34,13 @@
           <p class="profile__description">Explorador</p>
         </div>
 
-        <div class="profile__add">
+        <button class="profile__add">
           <img
             src="./images/profile__add.png"
             alt="adicionar"
             class="profile__add-bt"
           />
-        </div>
+        </button>
       </section>
       <main class="main">
         <div class="main__container">
@@ -151,7 +118,36 @@
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
     </div>
-
+    <div class="popup"></div>
+    <div class="popup__container">
+      <button class="popup__button">
+        <img src="./images/close__image.png" alt="close" class="popup__close" />
+      </button>
+      <form class="form">
+        <h2 class="form__title">Editar perfil</h2>
+        <fieldset class="form__fieldset">
+          <input
+            type="text"
+            class="form__input form__input-name"
+            id="name"
+            name="name"
+            placeholder="Nome"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <input
+            type="text"
+            class="form__input form__input-description"
+            id="description"
+            name="description"
+            placeholder="Sobre mim"
+            required
+          />
+          <button class="form__button" type="submit">Salvar</button>
+        </fieldset>
+      </form>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
