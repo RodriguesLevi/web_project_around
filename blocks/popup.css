@@ -43,7 +43,11 @@
 }
 
 @media screen and (max-width: 740px) {
+  .popup__container {
+    top: 40%;
+    left: 20%;
+  }
   .popup__button {
-    margin-left: 280px;
+    margin-left: 450px;
   }
 }
