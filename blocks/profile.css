@@ -6,6 +6,7 @@
 
 .profile__image {
   max-width: 120px;
+  height: 120px;
   width: 100%;
   border-radius: 50%;
 }
@@ -32,9 +33,6 @@
 .profile__description {
   margin: 0;
   max-width: 415px;
-
-  gap: 0px;
-  opacity: 0px;
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -47,8 +45,6 @@
   border: 1px solid #ffffff;
   max-width: 24px;
   height: 24px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
 }
 .profile__button:hover {
   cursor: pointer;

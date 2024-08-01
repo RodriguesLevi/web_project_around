@@ -22,8 +22,6 @@
   width: 40px;
   height: 40px;
   margin-left: 420px;
-  gap: 0px;
-  opacity: 0px;
 }
 .popup__button:hover {
   cursor: pointer;
