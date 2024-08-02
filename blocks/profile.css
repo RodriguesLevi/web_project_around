@@ -7,7 +7,6 @@
 .profile__image {
   max-width: 120px;
   height: 120px;
-  width: 100%;
   border-radius: 50%;
 }
 .profile__card {

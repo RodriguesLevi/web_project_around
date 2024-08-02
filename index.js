@@ -1,9 +1,9 @@
-let container = document.querySelector(".popup__container");
-let editbutton = document.querySelector(".profile__button");
-let popup = document.querySelector(".popup");
-let buttonclose = document.querySelector(".popup__button");
-let botaosalvar = document.querySelector(".form__button");
-let form = document.querySelector(".form");
+const container = document.querySelector(".popup__container");
+const editbutton = document.querySelector(".profile__button");
+const popup = document.querySelector(".popup");
+const buttonclose = document.querySelector(".popup__button");
+const botaosalvar = document.querySelector(".form__button");
+const form = document.querySelector(".form");
 
 // abrir o popup
 
@@ -24,12 +24,12 @@ buttonclose.addEventListener("click", fecharPopup);
 function adicionandoNomes(event) {
   event.preventDefault();
   let nome = document.querySelector(".profile__name");
-  let descrição = document.querySelector(".profile__description");
+  let description = document.querySelector(".profile__description");
   let addNome = document.querySelector(".form__input-name");
-  let addDescrição = document.querySelector(".form__input-description");
+  let addDescription = document.querySelector(".form__input-description");
 
   nome.textContent = addNome.value;
-  descrição.textContent = addDescrição.value;
+  description.textContent = addDescription.value;
   // fechar botao
   fecharPopup();
 }
