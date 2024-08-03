@@ -2,26 +2,26 @@ const container = document.querySelector(".popup__container");
 const editbutton = document.querySelector(".profile__button");
 const popup = document.querySelector(".popup");
 const buttonclose = document.querySelector(".popup__button");
-const botaosalvar = document.querySelector(".form__button");
+const buttonSave = document.querySelector(".form__button");
 const form = document.querySelector(".form");
 
 // abrir o popup
 
-function abrirPopup() {
+function openPopup() {
   container.style.display = "block";
   popup.style.display = "block";
 }
-editbutton.addEventListener("click", abrirPopup);
+editbutton.addEventListener("click", openPopup);
 
-function fecharPopup() {
+function closePopup() {
   container.style.display = "none";
   popup.style.display = "none";
 }
-buttonclose.addEventListener("click", fecharPopup);
+buttonclose.addEventListener("click", closePopup);
 
 // adicionando nome e mudando info
 
-function adicionandoNomes(event) {
+function addNames(event) {
   event.preventDefault();
   let nome = document.querySelector(".profile__name");
   let description = document.querySelector(".profile__description");
@@ -31,6 +31,6 @@ function adicionandoNomes(event) {
   nome.textContent = addNome.value;
   description.textContent = addDescription.value;
   // fechar botao
-  fecharPopup();
+  closePopup();
 }
-botaosalvar.addEventListener("click", adicionandoNomes);
+buttonSave.addEventListener("click", addNames);
