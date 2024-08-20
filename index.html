@@ -80,6 +80,7 @@
         </div>
 
         <div class="cards__container">
+          <button></button>
           <img
             src="./images/image_4.jpg"
             alt="imagem de paisagem"
@@ -148,6 +149,41 @@
         </fieldset>
       </form>
     </div>
+    <div class="popup-edit"></div>
+    <div class="popup__container-edit">
+      <button class="popup__button-edit">
+        <img
+          src="./images/close__image.png"
+          alt="close"
+          class="popup__close-edit"
+        />
+      </button>
+      <form class="form-edit">
+        <h2 class="form__title-edit">Novo Local</h2>
+        <fieldset class="form__fieldset-edit">
+          <input
+            type="text"
+            class="form__input form__input-name-edit"
+            id="name"
+            name="name"
+            placeholder="Titulo"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <input
+            type="text"
+            class="form__input form__input-description-edit"
+            id="description"
+            name="description"
+            placeholder="Link de imagem"
+            required
+          />
+          <button class="form__button-edit" type="submit">Salvar</button>
+        </fieldset>
+      </form>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>
