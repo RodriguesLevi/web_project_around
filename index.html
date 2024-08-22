@@ -43,79 +43,23 @@
         </button>
       </section>
       <main class="cards">
-        <div class="cards__container">
-          <img
-            src="./images/image_1.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Montanhas Care...</h3>
-            <button class="cards__button" type="button"></button>
+        <template id="card-template">
+          <div class="cards__container">
+            <img src="" alt="" class="cards__image" />
+            <img
+              id="remove-image"
+              src="./images/Trash.png"
+              alt="delete"
+              class="cards__delete"
+            />
+            <div class="cards__container-title">
+              <h3 class="cards__container-name"></h3>
+              <button class="cards__button" type="button"></button>
+            </div>
           </div>
-        </div>
-
-        <div class="cards__container">
-          <img
-            src="./images/image_2.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Latemar</h3>
-            <button class="cards__button" type="button"></button>
-          </div>
-        </div>
-
-        <div class="cards__container">
-          <img
-            src="./images/image_3.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Vale de Yosemite</h3>
-            <button class="cards__button" type="button"></button>
-          </div>
-        </div>
-
-        <div class="cards__container">
-          <img
-            src="./images/image_4.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Parque Nacional...</h3>
-            <button class="cards__button" type="button"></button>
-          </div>
-        </div>
-
-        <div class="cards__container">
-          <img
-            src="./images/image_5.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <img src="./images/Trash.png" alt="delete" class="cards__delete" />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Lago di Braies</h3>
-            <button class="cards__button" type="button"></button>
-          </div>
-        </div>
-        <div class="cards__container">
-          <img
-            src="./images/image_6.jpg"
-            alt="imagem de paisagem"
-            class="cards__image"
-          />
-          <div class="cards__container-title">
-            <h3 class="cards__container-name">Lago Louise</h3>
-            <button class="cards__button" type="button"></button>
-          </div>
-        </div>
+        </template>
       </main>
-      <!-- <ul class="cards__add"></ul> -->
+
       <footer class="footer">
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
@@ -190,19 +134,6 @@
         </fieldset>
       </form>
     </div>
-    <template id="card-template">
-      <div id="" class="cards__container">
-        <img
-          src="./images/image_1.jpg"
-          alt="imagem de paisagem"
-          class="cards__image"
-        />
-        <div class="cards__container-title">
-          <h3 class="cards__container-name">Montanhas Care...</h3>
-          <button class="cards__button" type="button"></button>
-        </div>
-      </div>
-    </template>
 
     <script src="./index.js"></script>
   </body>
