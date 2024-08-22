@@ -80,7 +80,6 @@
         </div>
 
         <div class="cards__container">
-          <button></button>
           <img
             src="./images/image_4.jpg"
             alt="imagem de paisagem"
@@ -98,6 +97,7 @@
             alt="imagem de paisagem"
             class="cards__image"
           />
+          <img src="./images/Trash.png" alt="delete" class="cards__delete" />
           <div class="cards__container-title">
             <h3 class="cards__container-name">Lago di Braies</h3>
             <button class="cards__button" type="button"></button>
@@ -115,6 +115,7 @@
           </div>
         </div>
       </main>
+      <!-- <ul class="cards__add"></ul> -->
       <footer class="footer">
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
@@ -158,13 +159,13 @@
           class="popup__close-edit"
         />
       </button>
-      <form class="form-edit">
-        <h2 class="form__title-edit">Novo Local</h2>
-        <fieldset class="form__fieldset-edit">
+      <form class="form form-edit">
+        <h2 class="form__title form__title-edit">Novo Local</h2>
+        <fieldset class="form__fieldset form__fieldset-edit">
           <input
             type="text"
-            class="form__input form__input-name-edit"
-            id="name"
+            class="form__input form__input-name form__input-name-edit"
+            id="title"
             name="name"
             placeholder="Titulo"
             minlength="2"
@@ -172,17 +173,36 @@
             required
           />
           <input
-            type="text"
-            class="form__input form__input-description-edit"
-            id="description"
-            name="description"
+            type="url"
+            class="form__input form__input-description form__input-description-edit"
+            id="url"
+            name="url"
             placeholder="Link de imagem"
             required
           />
-          <button class="form__button-edit" type="submit">Salvar</button>
+          <button
+            id="create-button"
+            class="form__button form__button-edit"
+            type="submit"
+          >
+            Criar
+          </button>
         </fieldset>
       </form>
     </div>
+    <template id="card-template">
+      <div id="" class="cards__container">
+        <img
+          src="./images/image_1.jpg"
+          alt="imagem de paisagem"
+          class="cards__image"
+        />
+        <div class="cards__container-title">
+          <h3 class="cards__container-name">Montanhas Care...</h3>
+          <button class="cards__button" type="button"></button>
+        </div>
+      </div>
+    </template>
 
     <script src="./index.js"></script>
   </body>
