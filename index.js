@@ -64,13 +64,17 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
   },
 ];
-initialCards.forEach((card) => {
+
+// initialCards.forEach((card) => {
+//   const newCard = createCard(card);
+//   cardsAdd.prepend(newCard);
+// });
+
+for (const card of initialCards) {
   const newCard = createCard(card);
   cardsAdd.prepend(newCard);
-});
-//
+}
 // adicionando nome e mudando info
-
 function addNames(event) {
   event.preventDefault();
   if (addNome.value != "" && addDescription.value != "") {
@@ -127,21 +131,15 @@ function createCard(card) {
   cardElement.querySelector(".cards__container-name").textContent = card.name;
   cardElement.querySelector(".cards__image").setAttribute("src", card.link);
   cardElement.querySelector(".cards__image").setAttribute("alt", card.name);
+  cardElement
+    .querySelector(".cards__delete")
+    .addEventListener("click", (evt) => {
+      evt.target.parentElement.remove();
+    });
   return cardElement;
 }
-
-// assinatura de função
-// function insertCard(imageTitle, imageUrl) {
-//   console.log(imageUrl);
-//   cardsAdd.insertAdjacentHTML("beforeend", ``);
-// }
 
 // adicionar a imagem
 formAddCard.addEventListener("submit", addImage);
 // fechar o popup
 buttonImage.addEventListener("click", closePopupEdit);
-
-// removendo a imagem
-function removeImg() {}
-
-// removeImage.addEventListener("click", removeImg);

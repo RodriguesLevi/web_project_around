@@ -61,6 +61,11 @@
   cursor: pointer;
   opacity: 0.6;
 }
+.cards__button-remove {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
 
 @media screen and (max-width: 1024px) {
   .cards {
