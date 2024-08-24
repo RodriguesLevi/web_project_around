@@ -1,6 +1,6 @@
 .popup {
   position: fixed;
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 1);
@@ -78,4 +78,11 @@
 .popup__button-edit:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+.popup__image-open {
+  height: 75vh;
+  width: 75vw;
+}
+.popup__image {
+  display: none;
 }

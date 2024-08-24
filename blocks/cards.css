@@ -45,6 +45,7 @@
   position: absolute;
   top: 18px;
   right: 15px;
+  cursor: pointer;
 }
 .cards__delete:hover {
   opacity: 60%;
@@ -52,15 +53,12 @@
 .cards__button {
   width: 21px;
   height: 19px;
-  background-image: url(../images/image__like.png);
   background-size: contain;
   border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.main__button:hover {
-  cursor: pointer;
-  opacity: 0.6;
-}
 .cards__button-remove {
   border: none;
   background-color: transparent;
