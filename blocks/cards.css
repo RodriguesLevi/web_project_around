@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 17px 20px;
   margin-top: 50px;
+  position: relative;
 }
 .cards__image {
   max-width: 282px;
@@ -63,6 +64,7 @@
   border: none;
   background-color: transparent;
   padding: 0;
+  line-height: 0;
 }
 
 @media screen and (max-width: 1024px) {

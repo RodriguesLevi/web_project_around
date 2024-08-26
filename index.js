@@ -22,6 +22,8 @@ const formAddCard = document.querySelector(".form-edit");
 const buttonRemove = document.querySelector("#remove-image");
 
 const popupImage = document.querySelector(".popup__image");
+
+const popupButtonImage = document.querySelector(".popup__button-image");
 // abrir o popup
 
 function openPopup() {
@@ -106,6 +108,7 @@ function closePopupEdit() {
   popupContainer.style.display = "none";
 }
 buttonCloseEdit.addEventListener("click", closePopupEdit);
+// buttonImage.addEventListener("click", closePopupEdit);
 
 // adicionando imagens e tema
 
@@ -159,7 +162,13 @@ function createCard(card) {
   return cardElement;
 }
 
+function popupImageCard() {
+  popupImage.style.display = "none";
+}
+popupButtonImage.addEventListener("click", popupImageCard);
+
+// fechar o popup
+
 // adicionar a imagem
 formAddCard.addEventListener("submit", addImage);
 // fechar o popup
-buttonImage.addEventListener("click", closePopupEdit);

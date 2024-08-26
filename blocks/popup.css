@@ -1,6 +1,5 @@
 .popup {
   position: fixed;
-  /* display: none; */
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 1);
@@ -27,10 +26,65 @@
   cursor: pointer;
   opacity: 0.6;
 }
+.popup__image {
+  display: none;
+}
+
+.popup__image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.popup__button-image {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  margin-top: -550px;
+  margin-left: 850px;
+}
+.popup__button-image:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.popup__image-open {
+  height: 540px;
+  width: 816px;
+  margin-top: 40px;
+}
+.popup__image-name {
+  width: 291px;
+  height: 12px;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: #ffffff;
+  margin-top: 620px;
+  margin-left: -525px;
+  position: absolute;
+}
 @media screen and (max-width: 1024px) {
   .popup__button {
     margin-left: 600px;
     max-width: 100%;
+  }
+  .popup__button-image {
+    margin-left: 480px;
+  }
+  .popup__image-open {
+    height: 540px;
+    width: 433px;
+  }
+  .popup__image-name {
+    margin-left: -140px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -48,41 +102,16 @@
   .popup__button {
     margin-left: 450px;
   }
-}
-
-.popup-edit {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 1);
-  opacity: 0.5;
-}
-.popup__container-edit {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  border-radius: 10px;
-  font-family: "Inter", sans-serif;
-  display: none;
-}
-.popup__button-edit {
-  background-color: transparent;
-  border: none;
-  width: 40px;
-  height: 40px;
-  margin-left: 420px;
-}
-.popup__button-edit:hover {
-  cursor: pointer;
-  opacity: 0.6;
-}
-.popup__image-open {
-  height: 75vh;
-  width: 75vw;
-}
-.popup__image {
-  display: none;
+  .popup__button-image {
+    margin-left: 260px;
+    margin-top: -299px;
+  }
+  .popup__image-open {
+    height: 299px;
+    width: 240px;
+  }
+  .popup__image-name {
+    margin-left: 60px;
+    margin-top: 380px;
+  }
 }

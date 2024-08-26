@@ -73,11 +73,17 @@
       </footer>
     </div>
     <div class="popup__image">
-      <button class="popup__button-image">
-        <img class="" src="./images/close__image.png" alt="" />
-      </button>
-      <img class="popup__image-open" src="" alt="" />
-      <p class="popup__image-name"></p>
+      <div class="popup__image-container">
+        <button class="popup__button-image">
+          <img
+            class="popup__button-photo"
+            src="./images/close__image.png"
+            alt=""
+          />
+        </button>
+        <img class="popup__image-open" src="" alt="" />
+        <p class="popup__image-name"></p>
+      </div>
     </div>
     <div class="popup"></div>
     <div class="popup__container">
@@ -109,9 +115,9 @@
         </fieldset>
       </form>
     </div>
-    <div class="popup-edit"></div>
-    <div class="popup__container-edit">
-      <button class="popup__button-edit">
+    <div class="popup popup-edit"></div>
+    <div class="popup__container popup__container-edit">
+      <button class="popup__button popup__button-edit">
         <img
           src="./images/close__image.png"
           alt="close"
