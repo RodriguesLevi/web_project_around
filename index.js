@@ -8,10 +8,10 @@ const buttonSave = document.querySelector(".form__button");
 const form = document.querySelector(".form");
 
 // variaveis para adicionar o novo nome e descrição
-let nome = document.querySelector(".profile__name");
-let description = document.querySelector(".profile__description");
-let addNome = document.querySelector(".form__input-name");
-let addDescription = document.querySelector(".form__input-description");
+const nome = document.querySelector(".profile__name");
+const description = document.querySelector(".profile__description");
+const addNome = document.querySelector(".form__input-name");
+const addDescription = document.querySelector(".form__input-description");
 
 // variaveis para adicionar a imagem
 const inputTitle = document.querySelector("#title");
@@ -169,6 +169,7 @@ popupButtonImage.addEventListener("click", popupImageCard);
 
 // fechar o popup
 
+buttonImage.addEventListener("click", closePopupEdit);
 // adicionar a imagem
 formAddCard.addEventListener("submit", addImage);
 // fechar o popup
