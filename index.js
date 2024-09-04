@@ -66,15 +66,15 @@ const initialCards = [
   },
 ];
 
-// initialCards.forEach((card) => {
-//   const newCard = createCard(card);
-//   cardsAdd.prepend(newCard);
-// });
-
-for (const card of initialCards) {
+initialCards.forEach((card) => {
   const newCard = createCard(card);
   cardsAdd.prepend(newCard);
-}
+});
+
+// for (const card of initialCards) {
+//   const newCard = createCard(card);
+//   cardsAdd.prepend(newCard);
+// }
 // adicionando nome e mudando info
 function addNames(event) {
   event.preventDefault();

@@ -90,28 +90,38 @@
       <button class="popup__button">
         <img src="./images/close__image.png" alt="close" class="popup__close" />
       </button>
-      <form class="form">
+      <form class="form" novalidate>
         <h2 class="form__title">Editar perfil</h2>
         <fieldset class="form__fieldset">
-          <input
-            type="text"
-            class="form__input form__input-name"
-            id="name"
-            name="name"
-            placeholder="Nome"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <input
-            type="text"
-            class="form__input form__input-description"
-            id="description"
-            name="description"
-            placeholder="Sobre mim"
-            required
-          />
-          <button class="form__button" type="submit">Salvar</button>
+          <div class="form__display">
+            <input
+              type="text"
+              class="form__input form__input-name"
+              id="name"
+              name="name"
+              placeholder="Nome"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="form__display">
+            <input
+              type="text"
+              class="form__input form__input-description"
+              id="description"
+              name="description"
+              placeholder="Sobre mim"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <p class="error-message"></p>
+          </div>
+          <button id="button-save" class="form__button" type="submit">
+            Salvar
+          </button>
         </fieldset>
       </form>
     </div>
@@ -124,27 +134,33 @@
           class="popup__close-edit"
         />
       </button>
-      <form class="form form-edit">
+      <form class="form form-edit" novalidate>
         <h2 class="form__title form__title-edit">Novo Local</h2>
         <fieldset class="form__fieldset form__fieldset-edit">
-          <input
-            type="text"
-            class="form__input form__input-name form__input-name-edit"
-            id="title"
-            name="name"
-            placeholder="Titulo"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <input
-            type="url"
-            class="form__input form__input-description form__input-description-edit"
-            id="url"
-            name="url"
-            placeholder="Link de imagem"
-            required
-          />
+          <div class="form__display">
+            <input
+              type="text"
+              class="form__input form__input-name form__input-name-edit"
+              id="title"
+              name="name"
+              placeholder="Titulo"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="form__display">
+            <input
+              type="url"
+              class="form__input form__input-description form__input-description-edit"
+              id="url"
+              name="url"
+              placeholder="Link de imagem"
+              required
+            />
+            <p class="error-message"></p>
+          </div>
           <button
             id="create-button"
             class="form__button form__button-edit"
@@ -157,5 +173,6 @@
     </div>
 
     <script src="./index.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>
