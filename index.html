@@ -72,7 +72,7 @@
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
     </div>
-    <div class="popup__image">
+    <!-- <div class="popup popup__image">
       <div class="popup__image-container">
         <button class="popup__button-image">
           <img
@@ -84,63 +84,68 @@
         <img class="popup__image-open" src="" alt="" />
         <p class="popup__image-name"></p>
       </div>
+    </div> -->
+    <div class="popup popup-edit-test">
+      <div class="popup__container">
+        <button class="popup__button">
+          <img
+            src="./images/close__image.png"
+            alt="close"
+            class="popup__close"
+          />
+        </button>
+        <form class="form" novalidate>
+          <h2 class="form__title">Editar perfil</h2>
+          <fieldset class="form__fieldset">
+            <div class="form__display">
+              <input
+                type="text"
+                class="form__input form__input-name"
+                id="name"
+                name="name"
+                placeholder="Nome"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <p class="error-message"></p>
+            </div>
+            <div class="form__display">
+              <input
+                type="text"
+                class="form__input form__input-description"
+                id="description"
+                name="description"
+                placeholder="Sobre mim"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <p class="error-message"></p>
+            </div>
+            <button id="button-save" class="form__button" type="submit">
+              Salvar
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-    <div class="popup"></div>
-    <div class="popup__container">
-      <button class="popup__button">
-        <img src="./images/close__image.png" alt="close" class="popup__close" />
-      </button>
-      <form class="form" novalidate>
-        <h2 class="form__title">Editar perfil</h2>
-        <fieldset class="form__fieldset">
-          <div class="form__display">
-            <input
-              type="text"
-              class="form__input form__input-name"
-              id="name"
-              name="name"
-              placeholder="Nome"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <p class="error-message"></p>
-          </div>
-          <div class="form__display">
-            <input
-              type="text"
-              class="form__input form__input-description"
-              id="description"
-              name="description"
-              placeholder="Sobre mim"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <p class="error-message"></p>
-          </div>
-          <button id="button-save" class="form__button" type="submit">
-            Salvar
-          </button>
-        </fieldset>
-      </form>
-    </div>
-    <div class="popup popup-edit"></div>
-    <div class="popup__container popup__container-edit">
-      <button class="popup__button popup__button-edit">
+    <!-- <div class="popup popup-edit popup-add"></div> -->
+    <!-- <div class="popup popup__container popup__container-add">
+      <button class="popup__button popup__button-add">
         <img
           src="./images/close__image.png"
           alt="close"
-          class="popup__close-edit"
+          class="popup__close-add"
         />
       </button>
-      <form class="form form-edit" novalidate>
-        <h2 class="form__title form__title-edit">Novo Local</h2>
-        <fieldset class="form__fieldset form__fieldset-edit">
+      <form class="form form-add" novalidate>
+        <h2 class="form__title form__title-add">Novo Local</h2>
+        <fieldset class="form__fieldset form__fieldset-add">
           <div class="form__display">
             <input
               type="text"
-              class="form__input form__input-name form__input-name-edit"
+              class="form__input form__input-name form__input-name-add"
               id="title"
               name="name"
               placeholder="Titulo"
@@ -153,7 +158,7 @@
           <div class="form__display">
             <input
               type="url"
-              class="form__input form__input-description form__input-description-edit"
+              class="form__input form__input-description form__input-description-add"
               id="url"
               name="url"
               placeholder="Link de imagem"
@@ -163,14 +168,14 @@
           </div>
           <button
             id="create-button"
-            class="form__button form__button-edit"
+            class="form__button form__button-add"
             type="submit"
           >
             Criar
           </button>
         </fieldset>
       </form>
-    </div>
+    </div> -->
 
     <script src="./index.js"></script>
     <script src="./validate.js"></script>

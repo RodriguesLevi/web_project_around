@@ -2,20 +2,27 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 1);
-  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  inset: 0;
+}
+.popup-opened {
+  display: flex;
 }
 .popup__container {
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
   color: black;
   border-radius: 10px;
   font-family: "Inter", sans-serif;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 .popup__button {
   background-color: transparent;

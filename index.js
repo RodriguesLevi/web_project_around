@@ -1,6 +1,6 @@
 // variaveis que manipulam o popup do usuario
 
-const container = document.querySelector(".popup__container");
+const popupEdit = document.querySelector(".popup-edit-test");
 const editbutton = document.querySelector(".profile__button");
 // const popup = document.querySelector(".popup");
 const buttonclose = document.querySelector(".popup__button");
@@ -27,12 +27,14 @@ const popupButtonImage = document.querySelector(".popup__button-image");
 // abrir o popup
 
 function openPopup() {
-  container.style.display = "block";
+  // container.style.display = "block";
+  popupEdit.classList.add("popup-opened");
 }
 editbutton.addEventListener("click", openPopup);
 // fechar popup
 function closePopup() {
-  container.style.display = "none";
+  // container.style.display = "none";
+  popupEdit.classList.remove("popup-opened");
 }
 buttonclose.addEventListener("click", closePopup);
 
@@ -90,24 +92,24 @@ function addNames(event) {
 buttonSave.addEventListener("click", addNames);
 
 // abrir popup para adicionar a imagem
-const popupEdit = document.querySelector(".popup-edit");
+// const popupEdit = document.querySelector(".popup-edit");
 const buttonEdit = document.querySelector(".profile__add");
-const popupContainer = document.querySelector(".popup__container-edit");
+const popupContainer = document.querySelector(".popup");
 const buttonCloseEdit = document.querySelector(".popup__close-edit");
 
 //  abrir o popup para adicionar imagens
 function openPopupEdit() {
-  popupEdit.style.display = "block";
+  // popupEdit.style.display = "block";
   popupContainer.style.display = "block";
 }
-buttonEdit.addEventListener("click", openPopupEdit);
+// buttonEdit.addEventListener("click", openPopupEdit);
 
 // fechar o popup
 function closePopupEdit() {
-  popupEdit.style.display = "none";
+  // popupEdit.style.display = "none";
   popupContainer.style.display = "none";
 }
-buttonCloseEdit.addEventListener("click", closePopupEdit);
+// buttonCloseEdit.addEventListener("click", closePopupEdit);
 // buttonImage.addEventListener("click", closePopupEdit);
 
 // adicionando imagens e tema
@@ -165,11 +167,30 @@ function createCard(card) {
 function popupImageCard() {
   popupImage.style.display = "none";
 }
-popupButtonImage.addEventListener("click", popupImageCard);
+// popupButtonImage.addEventListener("click", popupImageCard);
 
 // fechar o popup
 
-buttonImage.addEventListener("click", closePopupEdit);
+// buttonImage.addEventListener("click", closePopupEdit);
 // adicionar a imagem
-formAddCard.addEventListener("submit", addImage);
+// formAddCard.addEventListener("submit", addImage);
 // fechar o popup
+
+// FUNÇÃO PARA SAIR APERTANDO O "ESC"
+
+const button = document.querySelector(".popup__button");
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    // closePopupEdit();
+    closePopup();
+  }
+});
+const popup = document.querySelector(".popup");
+
+popup.addEventListener("click", (evt) => {
+  console.log("test");
+
+  // closePopupEdit();
+  closePopup();
+});
