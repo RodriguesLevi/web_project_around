@@ -29,8 +29,7 @@
   border: none;
   width: 40px;
   height: 40px;
-  margin-left: 880px;
-  margin-top: 100px;
+  margin-left: 430px;
 }
 .popup__button:hover {
   cursor: pointer;
@@ -84,7 +83,6 @@
 }
 @media screen and (max-width: 1024px) {
   .popup__button {
-    margin-left: 620px;
     max-width: 100%;
   }
   .popup__button-image {
@@ -101,7 +99,7 @@
 
 @media screen and (max-width: 740px) {
   .popup__button {
-    margin-left: 300px;
+    margin-left: 280px;
   }
   .popup__button-image {
     margin-left: 260px;
