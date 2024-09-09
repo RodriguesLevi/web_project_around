@@ -93,23 +93,21 @@ buttonSave.addEventListener("click", addNames);
 
 // abrir popup para adicionar a imagem
 // const popupEdit = document.querySelector(".popup-edit");
-const buttonEdit = document.querySelector(".profile__add");
-const popupContainer = document.querySelector(".popup");
-const buttonCloseEdit = document.querySelector(".popup__close-edit");
+const buttonAdd = document.querySelector(".profile__add");
+const popupAddCard = document.querySelector(".popup-add");
+const buttonCloseAdd = document.querySelector(".popup__close-add");
 
 //  abrir o popup para adicionar imagens
-function openPopupEdit() {
-  // popupEdit.style.display = "block";
-  popupContainer.style.display = "block";
+function openPopupAdd() {
+  popupAddCard.classList.add("popup-opened");
 }
-// buttonEdit.addEventListener("click", openPopupEdit);
+buttonAdd.addEventListener("click", openPopupAdd);
 
 // fechar o popup
-function closePopupEdit() {
-  // popupEdit.style.display = "none";
-  popupContainer.style.display = "none";
+function closePopupAdd() {
+  popupAddCard.classList.remove("popup-opened");
 }
-// buttonCloseEdit.addEventListener("click", closePopupEdit);
+buttonCloseAdd.addEventListener("click", closePopupAdd);
 // buttonImage.addEventListener("click", closePopupEdit);
 
 // adicionando imagens e tema
@@ -182,15 +180,13 @@ const button = document.querySelector(".popup__button");
 
 document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
-    // closePopupEdit();
+    closePopupAdd();
     closePopup();
   }
 });
 const popup = document.querySelector(".popup");
 
 popup.addEventListener("click", (evt) => {
-  console.log("test");
-
-  // closePopupEdit();
+  closePopupAdd();
   closePopup();
 });
