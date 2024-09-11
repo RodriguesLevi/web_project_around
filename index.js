@@ -1,8 +1,8 @@
 // variaveis que manipulam o popup do usuario
-
-const popupEdit = document.querySelector(".popup-edit-test");
+const popupEdit = document.querySelector(".popup-edit");
 const editbutton = document.querySelector(".profile__button");
-// const popup = document.querySelector(".popup");
+
+// variaveis que manipulam o popup de adicionar imagem
 const buttonclose = document.querySelector(".popup__button");
 const buttonSave = document.querySelector(".form__button");
 const form = document.querySelector(".form");
@@ -18,28 +18,28 @@ const inputTitle = document.querySelector("#title");
 const inputUrl = document.querySelector("#url");
 const buttonImage = document.querySelector("#create-button");
 const cardsAdd = document.querySelector(".cards");
-const formAddCard = document.querySelector(".form-edit");
+const formAddCard = document.querySelector(".form-add");
 const buttonRemove = document.querySelector("#remove-image");
 
-const popupImage = document.querySelector(".popup__image");
+const popupImage = document.querySelector(".popup-image");
 
 const popupButtonImage = document.querySelector(".popup__button-image");
+
 // abrir o popup
-
-function openPopup() {
-  // container.style.display = "block";
-  popupEdit.classList.add("popup-opened");
+function openPopup(popup) {
+  popup.classList.add("popup-opened");
 }
-editbutton.addEventListener("click", openPopup);
+
 // fechar popup
-function closePopup() {
-  // container.style.display = "none";
-  popupEdit.classList.remove("popup-opened");
+function closePopup(popup) {
+  popup.classList.remove("popup-opened");
 }
-buttonclose.addEventListener("click", closePopup);
 
-//
-//
+// evento para abrir popup de editar perfil
+editbutton.addEventListener("click", () => openPopup(popupEdit));
+
+// evento para fechar popup de editar perfil
+buttonclose.addEventListener("click", () => closePopup(popupEdit));
 
 const initialCards = [
   {
@@ -73,10 +73,6 @@ initialCards.forEach((card) => {
   cardsAdd.prepend(newCard);
 });
 
-// for (const card of initialCards) {
-//   const newCard = createCard(card);
-//   cardsAdd.prepend(newCard);
-// }
 // adicionando nome e mudando info
 function addNames(event) {
   event.preventDefault();
@@ -85,33 +81,24 @@ function addNames(event) {
     description.textContent = addDescription.value;
   }
   // fechar botao
-  closePopup();
+  closePopup(popupEdit);
   addNome.value = "";
   addDescription.value = "";
 }
 buttonSave.addEventListener("click", addNames);
 
 // abrir popup para adicionar a imagem
-// const popupEdit = document.querySelector(".popup-edit");
 const buttonAdd = document.querySelector(".profile__add");
 const popupAddCard = document.querySelector(".popup-add");
 const buttonCloseAdd = document.querySelector(".popup__close-add");
 
 //  abrir o popup para adicionar imagens
-function openPopupAdd() {
-  popupAddCard.classList.add("popup-opened");
-}
-buttonAdd.addEventListener("click", openPopupAdd);
+buttonAdd.addEventListener("click", () => openPopup(popupAddCard));
 
-// fechar o popup
-function closePopupAdd() {
-  popupAddCard.classList.remove("popup-opened");
-}
-buttonCloseAdd.addEventListener("click", closePopupAdd);
-// buttonImage.addEventListener("click", closePopupEdit);
+// // fechar o popup
+buttonCloseAdd.addEventListener("click", () => closePopup(popupAddCard));
 
 // adicionando imagens e tema
-
 function addImage(event) {
   event.preventDefault();
   if (inputTitle.value != "" && inputUrl.value != "") {
@@ -122,25 +109,27 @@ function addImage(event) {
     cardsAdd.prepend(newCard);
     inputTitle.value = "";
     inputUrl.value = "";
+
+    closePopup(popupAddCard);
   }
 }
+
+formAddCard.addEventListener("submit", addImage);
 
 function createCard(card) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate
     .querySelector(".cards__container")
     .cloneNode(true);
-  cardElement
-    .querySelector(".cards__image")
-    .addEventListener("click", (evt) => {
-      const popupCardImage = document.querySelector(".popup__image-open");
-      const popupCardTitle = document.querySelector(".popup__image-name");
+  cardElement.querySelector(".cards__image").addEventListener("click", () => {
+    const popupCardImage = document.querySelector(".popup__image-open");
+    const popupCardTitle = document.querySelector(".popup__image-name");
 
-      popupCardImage.setAttribute("src", card.link);
-      popupCardImage.setAttribute("alt", card.name);
-      popupCardTitle.textContent = card.name;
-      popupImage.style.display = "block";
-    });
+    popupCardImage.setAttribute("src", card.link);
+    popupCardImage.setAttribute("alt", card.name);
+    popupCardTitle.textContent = card.name;
+    openPopup(popupImage);
+  });
 
   cardElement.querySelector(".cards__container-name").textContent = card.name;
   cardElement.querySelector(".cards__image").setAttribute("src", card.link);
@@ -162,31 +151,22 @@ function createCard(card) {
   return cardElement;
 }
 
-function popupImageCard() {
-  popupImage.style.display = "none";
-}
-// popupButtonImage.addEventListener("click", popupImageCard);
-
-// fechar o popup
-
-// buttonImage.addEventListener("click", closePopupEdit);
-// adicionar a imagem
-// formAddCard.addEventListener("submit", addImage);
-// fechar o popup
+// Abre oopup de imagem
+popupButtonImage.addEventListener("click", () => openPopup());
 
 // FUNÇÃO PARA SAIR APERTANDO O "ESC"
-
-const button = document.querySelector(".popup__button");
-
 document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
-    closePopupAdd();
-    closePopup();
+    closePopup(popupAddCard);
+    closePopup(popupEdit);
+    closePopup(popupImage);
   }
 });
+
 const popup = document.querySelector(".popup");
 
-popup.addEventListener("click", (evt) => {
-  closePopupAdd();
-  closePopup();
+popup.addEventListener("click", () => {
+  closePopup(popupAddCard);
+  closePopup(popupEdit);
+  closePopup(popupImage);
 });

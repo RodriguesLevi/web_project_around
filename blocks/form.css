@@ -10,6 +10,7 @@
   border: 1px solid #000000;
   border-radius: 10px;
 }
+
 .form__title {
   padding: 34px 36px 54px 64px;
   width: 330px;
@@ -29,12 +30,24 @@
   flex-direction: column;
   align-items: center;
 }
+.form__display {
+  width: 358px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
 .form__input {
   max-width: 500px;
   width: 100%;
   border: none;
   border-bottom: 1px solid #545454;
   margin-bottom: 29.74px;
+  margin: 0;
+}
+
+.form__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 .form__button {
   margin: 0;
@@ -45,9 +58,13 @@
   background: #000000;
   color: #ffffff;
 }
-.form__button:hover {
-  cursor: pointer;
-  opacity: 0.8;
+
+.form__button:disabled,
+.form__button[disabled] {
+  background-color: #fff;
+  color: #000;
+  opacity: 20%;
+  margin-top: 31px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -82,4 +99,5 @@
 .error-message {
   color: red;
   font-size: 12px;
+  margin: 0;
 }

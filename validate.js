@@ -12,18 +12,12 @@ function removeErrorMessage(input, errorMessage, config) {
   input.classList.remove(config.inputInvalidErrorMessage);
 }
 function enableButton(item, config) {
-  if (item == "name") {
-    const button = document.querySelector(config.popupSaveButton);
-    button.classList.remove("form__btn_disabled");
-    button.removeAttribute("disabled");
-  }
+  const button = document.querySelector(config.popupSaveButton);
+  button.removeAttribute("disabled");
 }
 function disableButton(item, config) {
-  if (item == "name") {
-    const button = document.querySelector(config.formAddButton);
-    button.classList.add("form__btn_disabled");
-    button.setAttribute("disabled", true);
-  }
+  const button = document.querySelector(config.popupSaveButton);
+  button.setAttribute("disabled", true);
 }
 
 function checkIsValid(event, config) {

@@ -72,8 +72,8 @@
         <p class="footer">© 2024 Around The U.S.</p>
       </footer>
     </div>
-    <!-- <div class="popup popup__image">
-      <div class="popup__image-container">
+    <div class="popup popup-image">
+      <div class="popup__image-container popup__container">
         <button class="popup__button-image">
           <img
             class="popup__button-photo"
@@ -84,8 +84,8 @@
         <img class="popup__image-open" src="" alt="" />
         <p class="popup__image-name"></p>
       </div>
-    </div> -->
-    <div class="popup popup-edit-test">
+    </div>
+    <div class="popup popup-edit">
       <div class="popup__container">
         <button class="popup__button">
           <img
@@ -123,7 +123,12 @@
               />
               <p class="error-message"></p>
             </div>
-            <button id="button-save" class="form__button" type="submit">
+            <button
+              disabled
+              id="button-save"
+              class="form__button"
+              type="submit"
+            >
               Salvar
             </button>
           </fieldset>
@@ -167,6 +172,7 @@
               <p class="error-message"></p>
             </div>
             <button
+              disabled
               id="create-button"
               class="form__button form__button-add"
               type="submit"
