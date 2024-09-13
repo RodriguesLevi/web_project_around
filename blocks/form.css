@@ -43,6 +43,10 @@
   border-bottom: 1px solid #545454;
   margin-bottom: 29.74px;
   margin: 0;
+  /* margin-top: 40px; */
+}
+.form__input:focus {
+  outline: none;
 }
 
 .form__button:hover {
@@ -65,6 +69,17 @@
   color: #000;
   opacity: 20%;
   margin-top: 31px;
+}
+.form__input-error-message {
+  font-size: 12px;
+  color: rgba(255, 0, 0, 1);
+  margin: 0;
+  max-width: 358px;
+}
+
+.form__input-invalid {
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(255, 0, 0, 1);
 }
 
 @media screen and (max-width: 1024px) {
@@ -94,10 +109,7 @@
   .form__button {
     width: 250px;
   }
-}
-
-.error-message {
-  color: red;
-  font-size: 12px;
-  margin: 0;
+  .form__display {
+    width: 250px;
+  }
 }

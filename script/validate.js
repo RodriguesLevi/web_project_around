@@ -11,18 +11,36 @@ function removeErrorMessage(input, errorMessage, config) {
   errorMessageElement.classList.remove(config.showErrorMessage);
   input.classList.remove(config.inputInvalidErrorMessage);
 }
+// habilitar o botao
 function enableButton(item, config) {
-  const button = document.querySelector(config.popupSaveButton);
-  button.removeAttribute("disabled");
+  if (item == "name" || item == "description") {
+    const button = document.querySelector(config.popupSaveButton);
+    button.classList.remove("form__button_disabled");
+    button.removeAttribute("disabled");
+  }
+  if (item == "title" || item == "url") {
+    const button = document.querySelector(config.formAddButton);
+    button.classList.remove("form__button_disabled");
+    button.removeAttribute("disabled");
+  }
 }
+// disabilidar o botao
 function disableButton(item, config) {
-  const button = document.querySelector(config.popupSaveButton);
-  button.setAttribute("disabled", true);
+  if (item == "name" || item == "description") {
+    const button = document.querySelector(config.popupSaveButton);
+    button.classList.add("form__button-disabled");
+    button.setAttribute("disabled", true);
+  }
+  if (item == "title" || item == "url") {
+    const button = document.querySelector(config.formAddButton);
+    button.classList.add("form__button-disabled");
+    button.setAttribute("disabled", true);
+  }
 }
 
 function checkIsValid(event, config) {
   const input = event.target;
-  const isValid = input.validity.valid;
+  const isValid = input.validity.valid && !/^\s*$/.test(input.value);
   const errorMessage = input.validationMessage;
 
   if (!isValid) {
@@ -48,8 +66,8 @@ function enableValidation(config) {
 enableValidation({
   formElement: "form",
   inputElement: "input",
-  showErrorMessage: "error__message_show_error",
-  inputInvalidErrorMessage: "invalid-input",
+  showErrorMessage: "form__input-error-message",
+  inputInvalidErrorMessage: "form__input-invalid",
   popupSaveButton: ".form__button",
   formAddButton: "#create-button",
 });

@@ -151,8 +151,8 @@ function createCard(card) {
   return cardElement;
 }
 
-// Abre oopup de imagem
-popupButtonImage.addEventListener("click", () => openPopup());
+// fecha popup de imagem
+popupButtonImage.addEventListener("click", () => closePopup(popupImage));
 
 // FUNÇÃO PARA SAIR APERTANDO O "ESC"
 document.addEventListener("keydown", function (evt) {
@@ -165,8 +165,22 @@ document.addEventListener("keydown", function (evt) {
 
 const popup = document.querySelector(".popup");
 
-popup.addEventListener("click", () => {
-  closePopup(popupAddCard);
-  closePopup(popupEdit);
-  closePopup(popupImage);
+// FUNÇÃO PARA SAIR APERTANDO O "click"
+
+popup.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup__container")) {
+    closePopup(popupImage);
+  }
+});
+
+popupEdit.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup__container")) {
+    closePopup(popupEdit);
+  }
+});
+
+popupAddCard.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup__container")) {
+    closePopup(popupAddCard);
+  }
 });
