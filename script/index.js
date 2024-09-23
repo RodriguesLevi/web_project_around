@@ -1,3 +1,7 @@
+import Card from "./Card.js";
+const newC = new Card("#card-template");
+newC.generateCard();
+
 // variaveis que manipulam o popup do usuario
 const popupEdit = document.querySelector(".popup-edit");
 const editbutton = document.querySelector(".profile__button");
