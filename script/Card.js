@@ -1,5 +1,6 @@
 export default class Card {
-  constructor(cardSelector) {
+  constructor(card, cardSelector) {
+    this._card = card;
     this._cardSelector = cardSelector;
   }
 
@@ -21,9 +22,9 @@ export default class Card {
         const popupCardTitle =
           this._element.querySelector(".popup__image-name");
 
-        popupCardImage.setAttribute("src", card.link);
-        popupCardImage.setAttribute("alt", card.name);
-        popupCardTitle.textContent = card.name;
+        popupCardImage.setAttribute("src", this._card.link);
+        popupCardImage.setAttribute("alt", this._card.name);
+        popupCardTitle.textContent = this._card.name;
         openPopup(popupImage);
       });
   }
@@ -33,26 +34,32 @@ export default class Card {
     this._element = this._getTempade();
     this._setEventListeners;
 
-    // cardElement.querySelector(".cards__container-name").textContent = card.name;
-    // cardElement.querySelector(".cards__image").setAttribute("src", card.link);
-    // cardElement.querySelector(".cards__image").setAttribute("alt", card.name);
-    // cardElement
-    //   .querySelector(".cards__delete")
-    //   .addEventListener("click", (evt) => {
-    //     evt.target.parentElement.remove();
-    //   });
-    // cardElement
-    //   .querySelector(".cards__button-like")
-    //   .addEventListener("click", (evt) => {
-    //     if (evt.target.getAttribute("src") === "./images/image__like.png") {
-    //       return evt.target.setAttribute(
-    //         "src",
-    //         "./images/image__like_color.png"
-    //       );
-    //     }
+    this._element.querySelector(".cards__container-name").textContent =
+      this._card.name;
+    this._element
+      .querySelector(".cards__image")
+      .setAttribute("src", this._card.link);
+    this._element
+      .querySelector(".cards__image")
+      .setAttribute("alt", this._card.name);
+    this._element
+      .querySelector(".cards__delete")
+      .addEventListener("click", (evt) => {
+        evt.target.parentElement.remove();
+      });
+    this._element
+      .querySelector(".cards__button-like")
+      .addEventListener("click", (evt) => {
+        if (evt.target.getAttribute("src") === "./images/image__like.png") {
+          return evt.target.setAttribute(
+            "src",
+            "./images/image__like_color.png"
+          );
+        }
 
-    //     return evt.target.setAttribute("src", "./images/image__like.png");
-    //   });
-    // return cardElement;
+        return evt.target.setAttribute("src", "./images/image__like.png");
+      });
+    this._setEventListeners;
+    return this._element;
   }
 }

@@ -1,5 +1,11 @@
 import Card from "./Card.js";
-const newC = new Card("#card-template");
+const newC = new Card(
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  "#card-template"
+);
 newC.generateCard();
 
 // variaveis que manipulam o popup do usuario
