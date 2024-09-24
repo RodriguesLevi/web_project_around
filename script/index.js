@@ -1,12 +1,4 @@
 import Card from "./Card.js";
-const newC = new Card(
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  "#card-template"
-);
-newC.generateCard();
 
 // variaveis que manipulam o popup do usuario
 const popupEdit = document.querySelector(".popup-edit");
@@ -78,11 +70,6 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach((card) => {
-  const newCard = createCard(card);
-  cardsAdd.prepend(newCard);
-});
-
 // adicionando nome e mudando info
 function addNames(event) {
   event.preventDefault();
@@ -126,40 +113,50 @@ function addImage(event) {
 
 formAddCard.addEventListener("submit", addImage);
 
-function createCard(card) {
-  const cardTemplate = document.querySelector("#card-template").content;
-  const cardElement = cardTemplate
-    .querySelector(".cards__container")
-    .cloneNode(true);
-  cardElement.querySelector(".cards__image").addEventListener("click", () => {
-    const popupCardImage = document.querySelector(".popup__image-open");
-    const popupCardTitle = document.querySelector(".popup__image-name");
+// function createCard(card) {
+//   const cardTemplate = document.querySelector("#card-template").content;
+//   const cardElement = cardTemplate
+//     .querySelector(".cards__container")
+//     .cloneNode(true);
+//   cardElement.querySelector(".cards__image").addEventListener("click", () => {
+//     const popupCardImage = document.querySelector(".popup__image-open");
+//     const popupCardTitle = document.querySelector(".popup__image-name");
 
-    popupCardImage.setAttribute("src", card.link);
-    popupCardImage.setAttribute("alt", card.name);
-    popupCardTitle.textContent = card.name;
-    openPopup(popupImage);
-  });
+//     popupCardImage.setAttribute("src", card.link);
+//     popupCardImage.setAttribute("alt", card.name);
+//     popupCardTitle.textContent = card.name;
+//     openPopup(popupImage);
+//   });
 
-  cardElement.querySelector(".cards__container-name").textContent = card.name;
-  cardElement.querySelector(".cards__image").setAttribute("src", card.link);
-  cardElement.querySelector(".cards__image").setAttribute("alt", card.name);
-  cardElement
-    .querySelector(".cards__delete")
-    .addEventListener("click", (evt) => {
-      evt.target.parentElement.remove();
-    });
-  cardElement
-    .querySelector(".cards__button-like")
-    .addEventListener("click", (evt) => {
-      if (evt.target.getAttribute("src") === "./images/image__like.png") {
-        return evt.target.setAttribute("src", "./images/image__like_color.png");
-      }
+//   cardElement.querySelector(".cards__container-name").textContent = card.name;
+//   cardElement.querySelector(".cards__image").setAttribute("src", card.link);
+//   cardElement.querySelector(".cards__image").setAttribute("alt", card.name);
+//   cardElement
+//     .querySelector(".cards__delete")
+//     .addEventListener("click", (evt) => {
+//       evt.target.parentElement.remove();
+//     });
+//   cardElement
+//     .querySelector(".cards__button-like")
+//     .addEventListener("click", (evt) => {
+//       if (evt.target.getAttribute("src") === "./images/image__like.png") {
+//         return evt.target.setAttribute("src", "./images/image__like_color.png");
+//       }
 
-      return evt.target.setAttribute("src", "./images/image__like.png");
-    });
-  return cardElement;
-}
+//       return evt.target.setAttribute("src", "./images/image__like.png");
+//     });
+//   return cardElement;
+// }
+initialCards.forEach((card) => {
+  // const newCard = createCard(card);
+  const newCard = new Card({
+    card,
+    cardSelector: "#card-template",
+    popupCardImage: ".popup__image-open",
+    popupCardTitle: ".popup__image-name",
+  }).generateCard();
+  cardsAdd.prepend(newCard);
+});
 
 // fecha popup de imagem
 popupButtonImage.addEventListener("click", () => closePopup(popupImage));

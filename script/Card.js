@@ -1,7 +1,9 @@
 export default class Card {
-  constructor(card, cardSelector) {
+  constructor({ card, cardSelector, popupCardImage, popupCardTitle }) {
     this._card = card;
     this._cardSelector = cardSelector;
+    this._popupCardImage = popupCardImage;
+    this._popupCardTitle = popupCardTitle;
   }
 
   // função privada
@@ -13,6 +15,7 @@ export default class Card {
       .cloneNode(true);
     return cardTemplate;
   }
+
   _setEventListeners() {
     this._element
       .querySelector(".cards__image")
@@ -22,10 +25,24 @@ export default class Card {
         const popupCardTitle =
           this._element.querySelector(".popup__image-name");
 
-        popupCardImage.setAttribute("src", this._card.link);
-        popupCardImage.setAttribute("alt", this._card.name);
-        popupCardTitle.textContent = this._card.name;
+        this._popupCardImage.setAttribute("src", this._card.link);
+        this._popupCardImage.setAttribute("alt", this._card.name);
+        this._popupCardTitl.textContent = this._card.name;
         openPopup(popupImage);
+      });
+
+    // botão do like
+    this._element
+      .querySelector(".cards__button-like")
+      .addEventListener("click", (evt) => {
+        if (evt.target.getAttribute("src") === "./images/image__like.png") {
+          return evt.target.setAttribute(
+            "src",
+            "./images/image__like_color.png"
+          );
+        }
+
+        return evt.target.setAttribute("src", "./images/image__like.png");
       });
   }
 
@@ -47,19 +64,8 @@ export default class Card {
       .addEventListener("click", (evt) => {
         evt.target.parentElement.remove();
       });
-    this._element
-      .querySelector(".cards__button-like")
-      .addEventListener("click", (evt) => {
-        if (evt.target.getAttribute("src") === "./images/image__like.png") {
-          return evt.target.setAttribute(
-            "src",
-            "./images/image__like_color.png"
-          );
-        }
 
-        return evt.target.setAttribute("src", "./images/image__like.png");
-      });
-    this._setEventListeners;
+    this._setEventListeners();
     return this._element;
   }
 }
