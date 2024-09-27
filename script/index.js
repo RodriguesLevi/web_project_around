@@ -12,12 +12,12 @@ import {
   buttonAdd,
   popupAddCard,
   buttonCloseAdd,
+  popup,
   initialCards,
   openPopup,
   closePopup,
   addNames,
   addImage,
-  popup,
 } from "./utils.js";
 
 // evento para fechar popup de editar perfil

@@ -1,21 +1,20 @@
+// const form = document.querySelector(".form");
+const nome = document.querySelector(".profile__name");
+const description = document.querySelector(".profile__description");
+const addNome = document.querySelector(".form__input-name");
+const addDescription = document.querySelector(".form__input-description");
+const inputTitle = document.querySelector("#title");
+const inputUrl = document.querySelector("#url");
+// const buttonImage = document.querySelector("#create-button");
+// const buttonRemove = document.querySelector("#remove-image");
+
 import Card from "./Card.js";
 export const popupEdit = document.querySelector(".popup-edit");
 export const editbutton = document.querySelector(".profile__button");
 export const buttonclose = document.querySelector(".popup__button");
 export const buttonSave = document.querySelector(".form__button");
-export const form = document.querySelector(".form");
-export const nome = document.querySelector(".profile__name");
-export const description = document.querySelector(".profile__description");
-export const addNome = document.querySelector(".form__input-name");
-export const addDescription = document.querySelector(
-  ".form__input-description"
-);
-export const inputTitle = document.querySelector("#title");
-export const inputUrl = document.querySelector("#url");
-export const buttonImage = document.querySelector("#create-button");
 export const cardsAdd = document.querySelector(".cards");
 export const formAddCard = document.querySelector(".form-add");
-export const buttonRemove = document.querySelector("#remove-image");
 export const popupImage = document.querySelector(".popup-image");
 export const popupButtonImage = document.querySelector(".popup__button-image");
 export const buttonAdd = document.querySelector(".profile__add");
