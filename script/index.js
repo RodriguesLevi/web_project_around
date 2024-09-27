@@ -1,5 +1,5 @@
 import Card from "./Card.js";
-import FormValidate from "./FormValidate.js";
+import FormValidator from "./FormValidator.js";
 import {
   popupEdit,
   editbutton,
@@ -73,7 +73,7 @@ popupAddCard.addEventListener("click", (evt) => {
 
 //                   valida os formularios
 
-const userForm = new FormValidate(
+const userForm = new FormValidator(
   {
     formElement: "form",
     inputElement: "input",
@@ -85,7 +85,7 @@ const userForm = new FormValidate(
   "#user-form"
 );
 
-const cardForm = new FormValidate(
+const cardForm = new FormValidator(
   {
     formElement: "form",
     inputElement: "input",

@@ -1,4 +1,4 @@
-export default class FormValidate {
+export default class FormValidator {
   constructor(config, formSelector) {
     this._config = config;
     this._formSelector = formSelector;
@@ -25,7 +25,6 @@ export default class FormValidate {
   // disabilidar o botao
   _disableButton(form) {
     const button = form.querySelector(this._config.popupSaveButton);
-
     button.classList.add("form__button-disabled");
     button.setAttribute("disabled", true);
   }
