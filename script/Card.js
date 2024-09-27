@@ -1,9 +1,11 @@
+import { openPopup } from "./utils.js";
 export default class Card {
-  constructor({ card, cardSelector, popupCardImage, popupCardTitle }) {
+  constructor({ card, cardSelector, popupCardImage, popupCardTitle, form }) {
     this._card = card;
     this._cardSelector = cardSelector;
     this._popupCardImage = popupCardImage;
     this._popupCardTitle = popupCardTitle;
+    this._form = form;
   }
 
   // função privada
@@ -17,17 +19,17 @@ export default class Card {
   }
 
   _setEventListeners() {
+    const popupImage = document.querySelector(".popup-image");
     this._element
       .querySelector(".cards__image")
       .addEventListener("click", () => {
-        const popupCardImage =
-          this._element.querySelector(".popup__image-open");
-        const popupCardTitle =
-          this._element.querySelector(".popup__image-name");
+        this._popupCardImage = popupImage.querySelector(".popup__image-open");
+
+        this._popupCardTitle = popupImage.querySelector(".popup__image-name");
 
         this._popupCardImage.setAttribute("src", this._card.link);
         this._popupCardImage.setAttribute("alt", this._card.name);
-        this._popupCardTitl.textContent = this._card.name;
+        this._popupCardTitle.textContent = this._card.name;
         openPopup(popupImage);
       });
 
@@ -49,7 +51,6 @@ export default class Card {
   generateCard() {
     // cards__container clonado
     this._element = this._getTempade();
-    this._setEventListeners;
 
     this._element.querySelector(".cards__container-name").textContent =
       this._card.name;
