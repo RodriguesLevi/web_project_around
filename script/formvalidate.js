@@ -19,12 +19,13 @@ export default class FormValidate {
   // habilitar o botao
   _enableButton(form) {
     const button = form.querySelector(this._config.popupSaveButton);
-    button.classList.remove("form__button_disabled");
+    button.classList.remove("form__button-disabled");
     button.removeAttribute("disabled");
   }
   // disabilidar o botao
   _disableButton(form) {
     const button = form.querySelector(this._config.popupSaveButton);
+
     button.classList.add("form__button-disabled");
     button.setAttribute("disabled", true);
   }
@@ -52,6 +53,7 @@ export default class FormValidate {
   }
 
   _setEventListeners() {
+    this._disableButton(this._form);
     const button = this._form.querySelector(this._config.popupSaveButton);
     button.classList.remove("form__button_disabled");
     button.removeAttribute("disabled");

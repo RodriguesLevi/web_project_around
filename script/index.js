@@ -98,9 +98,13 @@ const cardForm = new FormValidate(
 );
 
 // evento para abrir popup de editar perfil
-editbutton.addEventListener("click", () => openPopup(popupEdit));
-userForm.enableValidation();
+editbutton.addEventListener("click", () => {
+  openPopup(popupEdit);
+  userForm.enableValidation();
+});
 
 //  abrir o popup para adicionar imagens
-buttonAdd.addEventListener("click", () => openPopup(popupAddCard));
-cardForm.enableValidation();
+buttonAdd.addEventListener("click", () => {
+  openPopup(popupAddCard);
+  cardForm.enableValidation();
+});

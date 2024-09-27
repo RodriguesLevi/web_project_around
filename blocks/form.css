@@ -63,8 +63,7 @@
   color: #ffffff;
 }
 
-.form__button:disabled,
-.form__button[disabled] {
+.form__button-disabled {
   background-color: #fff;
   color: #000;
   opacity: 20%;
