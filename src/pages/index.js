@@ -1,5 +1,6 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import "./index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
 import {
   popupEdit,
   editbutton,
@@ -18,7 +19,7 @@ import {
   closePopup,
   addNames,
   addImage,
-} from "./utils.js";
+} from "../utils/utils.js";
 
 // evento para fechar popup de editar perfil
 buttonclose.addEventListener("click", () => closePopup(popupEdit));

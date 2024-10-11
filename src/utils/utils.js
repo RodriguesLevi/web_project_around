@@ -8,7 +8,7 @@ const inputUrl = document.querySelector("#url");
 // const buttonImage = document.querySelector("#create-button");
 // const buttonRemove = document.querySelector("#remove-image");
 
-import Card from "./Card.js";
+import Card from "../components/Card.js";
 export const popupEdit = document.querySelector(".popup-edit");
 export const editbutton = document.querySelector(".profile__button");
 export const buttonclose = document.querySelector(".popup__button");

@@ -6,20 +6,24 @@
     <meta name="author" content="Alisson Rodrigues" />
     <meta name="description" content="around-main" />
     <meta name="keywords" content="html,css,JavaScript" />
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
+    <!-- <link rel="shortcul icon" href="favicon.ico" type="image/x-icon" /> -->
     <title>around-main</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <nav class="nav">
-          <img src="./images/logo_around.png" alt="imagem do logo da page" />
+          <img
+            src="<%= require('./images/logo_around.png')%>"
+            alt="imagem do logo da page"
+          />
         </nav>
       </header>
       <section class="profile">
         <div>
           <img
-            src="./images/image_header.jpg"
+            src="<%= require('./images/image_header.jpg')%>"
             alt=" imagem do perfil"
             class="profile__image"
           />
@@ -28,7 +32,11 @@
           <h2 class="profile__name">Jacques Cousteau</h2>
           <div>
             <button class="profile__button">
-              <img src="./images/profile__botton.png" alt="botao" id="#login" />
+              <img
+                src="<%= require('./images/profile__botton.png')%>"
+                alt="botao"
+                id="#login"
+              />
             </button>
           </div>
           <p class="profile__description">Explorador</p>
@@ -36,7 +44,7 @@
 
         <button class="profile__add">
           <img
-            src="./images/profile__add.png"
+            src="<%= require('./images/profile__add.png')%>"
             alt="adicionar"
             class="profile__add-bt"
           />
@@ -50,7 +58,7 @@
             </button>
             <img
               id="remove-image"
-              src="./images/Trash.png"
+              src="<%= require('./images/Trash.png')%>"
               alt="delete"
               class="cards__delete"
             />
@@ -59,7 +67,7 @@
               <button class="cards__button" type="button">
                 <img
                   class="cards__button-like"
-                  src="./images/image__like.png"
+                  src="<%= require('./images/image__like.png')%>"
                   alt="icone de like"
                 />
               </button>
@@ -76,7 +84,7 @@
         <button class="popup__button-image">
           <img
             class="popup__button-photo"
-            src="./images/close__image.png"
+            src="<%= require('./images/close__image.png')%>"
             alt=""
           />
         </button>
@@ -88,7 +96,7 @@
       <div class="popup__container">
         <button class="popup__button">
           <img
-            src="./images/close__image.png"
+            src="<%= require('./images/close__image.png')%>"
             alt="close"
             class="popup__close"
           />
@@ -138,7 +146,7 @@
       <div class="popup__container popup__container-add">
         <button class="popup__button popup__button-add">
           <img
-            src="./images/close__image.png"
+            src="<%= require('./images/close__image.png')%>"
             alt="close"
             class="popup__close-add"
           />
@@ -182,6 +190,6 @@
         </form>
       </div>
     </div>
-    <script type="module" src="./script/index.js"></script>
+    <script type="module" src="../src/pages/index.js"></script>
   </body>
 </html>
