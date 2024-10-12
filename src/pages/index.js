@@ -1,45 +1,98 @@
 import "./index.css";
 import Card from "../components/Card.js";
+import Section from "../components/Section.js";
 import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 import {
   popupEdit,
   editbutton,
-  buttonclose,
-  buttonSave,
-  cardsAdd,
-  formAddCard,
   popupImage,
   popupButtonImage,
   buttonAdd,
-  popupAddCard,
-  buttonCloseAdd,
   popup,
   initialCards,
-  openPopup,
   closePopup,
   addNames,
-  addImage,
-} from "../utils/utils.js";
+  config,
+} from "../components/utils.js";
 
-// evento para fechar popup de editar perfil
-buttonclose.addEventListener("click", () => closePopup(popupEdit));
+// Instancia o PopupWithForm para edição de perfil
+const popupEditProfile = new PopupWithForm(".popup-edit", addNames, ".form");
+popupEditProfile.setEventListeners();
 
-buttonSave.addEventListener("click", addNames);
+const userForm = new FormValidator(
+  {
+    formElement: "form",
+    inputElement: "input",
+    showErrorMessage: "form__input-error-message",
+    inputInvalidErrorMessage: "form__input-invalid",
+    popupSaveButton: ".form__button",
+    formAddButton: "#create-button",
+  },
+  "#user-form"
+);
 
-// // fechar o popup
-buttonCloseAdd.addEventListener("click", () => closePopup(popupAddCard));
+// evento para abrir popup de editar perfil
+editbutton.addEventListener("click", () => {
+  popupEditProfile.open();
+  userForm.enableValidation();
+});
 
-formAddCard.addEventListener("submit", addImage);
+// adicionando nome e imagem ao cartão
+function addImage(values) {
+  if (values.title != "" && values.url != "") {
+    renderCards(values.title, values.url);
+  }
+}
 
-initialCards.forEach((card) => {
+// evento para abrir popup de adicionar cartão
+const popupAddCard = new PopupWithForm(".popup-add", addImage, ".form-add");
+popupAddCard.setEventListeners();
+
+//                   valida os formularios
+
+const cardForm = new FormValidator(
+  {
+    formElement: "form",
+    inputElement: "input",
+    showErrorMessage: "form__input-error-message",
+    inputInvalidErrorMessage: "form__input-invalid",
+    popupSaveButton: ".form__button",
+    formAddButton: "#create-button",
+  },
+  "#card-form"
+);
+
+//  abrir o popup para adicionar imagens
+buttonAdd.addEventListener("click", () => {
+  popupAddCard.open();
+  cardForm.enableValidation();
+});
+
+// Instancia o PopupWithImage
+const popupWithImage = new PopupWithImage(
+  ".popup-image",
+  ".popup__image-open",
+  ".popup__image-name"
+);
+popupWithImage.setEventListeners();
+
+function renderCards(card) {
   const newCard = new Card({
     card,
-    cardSelector: "#card-template",
-    popupCardImage: ".popup__image-open",
-    popupCardTitle: ".popup__image-name",
+    cardSelector: config.cardTemplateId,
+    handleCardClick: (title, image) => popupWithImage.open(title, image),
   }).generateCard();
-  cardsAdd.prepend(newCard);
-});
+
+  sectionCards.setItem(newCard);
+}
+
+const sectionCards = new Section(
+  { items: initialCards, acao: renderCards },
+  config
+);
+sectionCards.renderItems();
 
 // fecha popup de imagem
 popupButtonImage.addEventListener("click", () => closePopup(popupImage));
@@ -70,42 +123,4 @@ popupAddCard.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("popup__container")) {
     closePopup(popupAddCard);
   }
-});
-
-//                   valida os formularios
-
-const userForm = new FormValidator(
-  {
-    formElement: "form",
-    inputElement: "input",
-    showErrorMessage: "form__input-error-message",
-    inputInvalidErrorMessage: "form__input-invalid",
-    popupSaveButton: ".form__button",
-    formAddButton: "#create-button",
-  },
-  "#user-form"
-);
-
-const cardForm = new FormValidator(
-  {
-    formElement: "form",
-    inputElement: "input",
-    showErrorMessage: "form__input-error-message",
-    inputInvalidErrorMessage: "form__input-invalid",
-    popupSaveButton: ".form__button",
-    formAddButton: "#create-button",
-  },
-  "#card-form"
-);
-
-// evento para abrir popup de editar perfil
-editbutton.addEventListener("click", () => {
-  openPopup(popupEdit);
-  userForm.enableValidation();
-});
-
-//  abrir o popup para adicionar imagens
-buttonAdd.addEventListener("click", () => {
-  openPopup(popupAddCard);
-  cardForm.enableValidation();
 });

@@ -1,13 +1,5 @@
-// const form = document.querySelector(".form");
 const nome = document.querySelector(".profile__name");
 const description = document.querySelector(".profile__description");
-const addNome = document.querySelector(".form__input-name");
-const addDescription = document.querySelector(".form__input-description");
-const inputTitle = document.querySelector("#title");
-const inputUrl = document.querySelector("#url");
-// const buttonImage = document.querySelector("#create-button");
-// const buttonRemove = document.querySelector("#remove-image");
-
 import Card from "../components/Card.js";
 export const popupEdit = document.querySelector(".popup-edit");
 export const editbutton = document.querySelector(".profile__button");
@@ -21,6 +13,11 @@ export const buttonAdd = document.querySelector(".profile__add");
 export const popupAddCard = document.querySelector(".popup-add");
 export const buttonCloseAdd = document.querySelector(".popup__close-add");
 export const popup = document.querySelector(".popup");
+
+export const config = {
+  cardTemplateId: "#card-template",
+  cardsAdd,
+};
 
 export const initialCards = [
   {
@@ -58,32 +55,9 @@ export function closePopup(popup) {
 }
 
 // adicionando nome e mudando informações
-export function addNames(event) {
-  event.preventDefault();
-  if (addNome.value != "" && addDescription.value != "") {
-    nome.textContent = addNome.value;
-    description.textContent = addDescription.value;
-  }
-  // fechar botao
-  closePopup(popupEdit);
-  addNome.value = "";
-  addDescription.value = "";
-}
-// adicionando nome e imagem
-export function addImage(event) {
-  event.preventDefault();
-  if (inputTitle.value != "" && inputUrl.value != "") {
-    const newCard = new Card({
-      card: { name: inputTitle.value, link: inputUrl.value },
-      cardSelector: "#card-template",
-      popupCardImage: ".popup__image-open",
-      popupCardTitle: ".popup__image-name",
-    }).generateCard();
-
-    cardsAdd.prepend(newCard);
-    inputTitle.value = "";
-    inputUrl.value = "";
-
-    closePopup(popupAddCard);
+export function addNames(values) {
+  if (values.name != "" && values.description != "") {
+    nome.textContent = values.name;
+    description.textContent = values.description;
   }
 }

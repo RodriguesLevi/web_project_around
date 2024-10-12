@@ -1,16 +1,13 @@
-import { openPopup } from "../utils/utils.js";
 export default class Card {
-  constructor({ card, cardSelector, popupCardImage, popupCardTitle, form }) {
+  constructor({ card, cardSelector, handleCardClick }) {
     this._card = card;
     this._cardSelector = cardSelector;
-    this._popupCardImage = popupCardImage;
-    this._popupCardTitle = popupCardTitle;
-    this._form = form;
+    this._handleCardClick = handleCardClick;
   }
 
   // função privada
 
-  _getTempade() {
+  _getTemplate() {
     const cardTemplate = document
       .querySelector(this._cardSelector)
       .content.querySelector(".cards__container")
@@ -22,16 +19,9 @@ export default class Card {
     const popupImage = document.querySelector(".popup-image");
     this._element
       .querySelector(".cards__image")
-      .addEventListener("click", () => {
-        this._popupCardImage = popupImage.querySelector(".popup__image-open");
-
-        this._popupCardTitle = popupImage.querySelector(".popup__image-name");
-
-        this._popupCardImage.setAttribute("src", this._card.link);
-        this._popupCardImage.setAttribute("alt", this._card.name);
-        this._popupCardTitle.textContent = this._card.name;
-        openPopup(popupImage);
-      });
+      .addEventListener("click", () =>
+        this._handleCardClick(this._card.name, this._card.link)
+      );
 
     // botão do like
     this._element
@@ -50,7 +40,7 @@ export default class Card {
 
   generateCard() {
     // cards__container clonado
-    this._element = this._getTempade();
+    this._element = this._getTemplate();
 
     this._element.querySelector(".cards__container-name").textContent =
       this._card.name;
