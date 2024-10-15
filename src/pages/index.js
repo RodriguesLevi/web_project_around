@@ -5,14 +5,9 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import {
-  popupEdit,
   editbutton,
-  popupImage,
-  popupButtonImage,
   buttonAdd,
-  popup,
   initialCards,
-  closePopup,
   addNames,
   config,
 } from "../components/utils.js";
@@ -42,7 +37,7 @@ editbutton.addEventListener("click", () => {
 // adicionando nome e imagem ao cartão
 function addImage(values) {
   if (values.title != "" && values.url != "") {
-    renderCards(values.title, values.url);
+    renderCards({ name: values.title, link: values.url });
   }
 }
 
@@ -93,34 +88,3 @@ const sectionCards = new Section(
   config
 );
 sectionCards.renderItems();
-
-// fecha popup de imagem
-popupButtonImage.addEventListener("click", () => closePopup(popupImage));
-
-// FUNÇÃO PARA SAIR APERTANDO O "ESC"
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    closePopup(popupAddCard);
-    closePopup(popupEdit);
-    closePopup(popupImage);
-  }
-});
-
-// FUNÇÃO PARA SAIR APERTANDO O "click"
-
-popup.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("popup__container")) {
-    closePopup(popupImage);
-  }
-});
-popupEdit.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("popup__container")) {
-    closePopup(popupEdit);
-  }
-});
-
-popupAddCard.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("popup__container")) {
-    closePopup(popupAddCard);
-  }
-});

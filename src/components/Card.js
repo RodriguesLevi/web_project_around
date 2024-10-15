@@ -1,3 +1,6 @@
+import likeButtonClick from "../images/image__like_color.png";
+import likeButton from "../images/image__like.png";
+
 export default class Card {
   constructor({ card, cardSelector, handleCardClick }) {
     this._card = card;
@@ -16,7 +19,7 @@ export default class Card {
   }
 
   _setEventListeners() {
-    const popupImage = document.querySelector(".popup-image");
+    // const popupImage = document.querySelector(".popup-image");
     this._element
       .querySelector(".cards__image")
       .addEventListener("click", () =>
@@ -27,14 +30,11 @@ export default class Card {
     this._element
       .querySelector(".cards__button-like")
       .addEventListener("click", (evt) => {
-        if (evt.target.getAttribute("src") === "./images/image__like.png") {
-          return evt.target.setAttribute(
-            "src",
-            "./images/image__like_color.png"
-          );
+        if (evt.target.getAttribute("src") === likeButton) {
+          return evt.target.setAttribute("src", likeButtonClick);
         }
 
-        return evt.target.setAttribute("src", "./images/image__like.png");
+        return evt.target.setAttribute("src", likeButton);
       });
   }
 

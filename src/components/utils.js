@@ -45,14 +45,14 @@ export const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
   },
 ];
-//  função para abrir o popup
-export function openPopup(popup) {
-  popup.classList.add("popup-opened");
-}
-// função para fechar o poup
-export function closePopup(popup) {
-  popup.classList.remove("popup-opened");
-}
+// //  função para abrir o popup
+// export function openPopup(popup) {
+//   popup.classList.add("popup-opened");
+// }
+// // função para fechar o poup
+// export function closePopup(popup) {
+//   popup.classList.remove("popup-opened");
+// }
 
 // adicionando nome e mudando informações
 export function addNames(values) {
