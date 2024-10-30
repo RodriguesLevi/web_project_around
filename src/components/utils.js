@@ -13,10 +13,11 @@ export const buttonAdd = document.querySelector(".profile__add");
 export const popupAddCard = document.querySelector(".popup-add");
 export const buttonCloseAdd = document.querySelector(".popup__close-add");
 export const popup = document.querySelector(".popup");
-
+const ownerId = "d667c682-8c33-4a60-879f-a362c285fdc1";
 export const config = {
   cardTemplateId: "#card-template",
   cardsAdd,
+  ownerId,
 };
 
 export const initialCards = [
@@ -45,14 +46,6 @@ export const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
   },
 ];
-// //  função para abrir o popup
-// export function openPopup(popup) {
-//   popup.classList.add("popup-opened");
-// }
-// // função para fechar o poup
-// export function closePopup(popup) {
-//   popup.classList.remove("popup-opened");
-// }
 
 // adicionando nome e mudando informações
 export function addNames(values) {
