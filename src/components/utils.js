@@ -13,39 +13,39 @@ export const buttonAdd = document.querySelector(".profile__add");
 export const popupAddCard = document.querySelector(".popup-add");
 export const buttonCloseAdd = document.querySelector(".popup__close-add");
 export const popup = document.querySelector(".popup");
-const ownerId = "d667c682-8c33-4a60-879f-a362c285fdc1";
+const ownerId = "9cdb9bbdd07bc77e32b73ebe";
 export const config = {
   cardTemplateId: "#card-template",
   cardsAdd,
   ownerId,
 };
 
-export const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
+// export const initialCards = [
+//   {
+//     name: "Vale de Yosemite",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+//   },
+//   {
+//     name: "Lago Louise",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+//   },
+//   {
+//     name: "Montanhas Carecas",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+//   },
+//   {
+//     name: "Latemar",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+//   },
+//   {
+//     name: "Parque Nacional da Vanoise ",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+//   },
+//   {
+//     name: "Lago di Braies",
+//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+//   },
+// ];
 
 // adicionando nome e mudando informações
 export function addNames(values) {

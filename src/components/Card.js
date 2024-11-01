@@ -1,11 +1,22 @@
 import likeButtonClick from "../images/image__like_color.png";
 import likeButton from "../images/image__like.png";
+import { config } from "../components/utils";
 
 export default class Card {
-  constructor({ card, cardSelector, handleCardClick }) {
+  constructor({
+    card,
+    cardSelector,
+    handleCardClick,
+    deleteCard,
+    handleLike,
+    userOwner,
+  }) {
     this._card = card;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
+    this._deleteCard = deleteCard;
+    this._handleLike = handleLike;
+    this._userOwner = userOwner;
   }
 
   // função privada
@@ -19,21 +30,45 @@ export default class Card {
   }
 
   _setEventListeners() {
-    // const popupImage = document.querySelector(".popup-image");
+    // Percorre todos os likes para descobrir se o usuário deu like em algum cartão e caso o usuário tenha dado like, o cartão fica com o coração pintado
+    this._card.likes.forEach((like) => {
+      if (like._id === "9cdb9bbdd07bc77e32b73ebe") {
+        return this._element
+          .querySelector(".cards__button-like")
+          .setAttribute("src", likeButtonClick);
+      }
+    });
+
     this._element
       .querySelector(".cards__image")
       .addEventListener("click", () =>
         this._handleCardClick(this._card.name, this._card.link)
       );
 
+    const likeCounter = this._element.querySelector(".cards__like-counter");
+    likeCounter.textContent = this._card.likes.length;
+
     // botão do like
     this._element
       .querySelector(".cards__button-like")
       .addEventListener("click", (evt) => {
+        // pega elemento de contador de likes
+        const likeCounter = this._element.querySelector(".cards__like-counter");
         if (evt.target.getAttribute("src") === likeButton) {
+          // utiliza a propriedade likes do card para adiconar o contador de likes
+          // acessar o card -> acessar o array de likes -> verificar o comprimento do array de likes
+          this._handleLike(this._card, false).then((card) => {
+            // adiciona a quantidade de likes atualizada no contador de likes com base no retorno da api
+            likeCounter.textContent = card.likes.length;
+          });
           return evt.target.setAttribute("src", likeButtonClick);
         }
 
+        // utiliza a propriedade likes do card para adiconar o contador de likes
+        this._handleLike(this._card, true).then((card) => {
+          // adiciona a quantidade de likes atualizada no contador de likes com base no retorno da api
+          likeCounter.textContent = card.likes.length;
+        });
         return evt.target.setAttribute("src", likeButton);
       });
   }
@@ -50,9 +85,16 @@ export default class Card {
     this._element
       .querySelector(".cards__image")
       .setAttribute("alt", this._card.name);
+
+    if (config.ownerId !== this._card.owner._id) {
+      this._element
+        .querySelector(".cards__delete")
+        .classList.add("cards__delete-hidden");
+    }
     this._element
       .querySelector(".cards__delete")
       .addEventListener("click", (evt) => {
+        this._deleteCard(this._card._id);
         evt.target.parentElement.remove();
       });
 

@@ -48,8 +48,12 @@
   right: 15px;
   cursor: pointer;
 }
+
 .cards__delete:hover {
   opacity: 60%;
+}
+.cards__delete-hidden {
+  display: none;
 }
 .cards__button {
   width: 21px;

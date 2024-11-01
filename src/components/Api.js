@@ -4,8 +4,12 @@ export default class Api {
     this._headers = headers;
   }
 
+  // Profile() {
+  //   return fetch(`${this._baseUrl}`);
+  // }
+
   getUsers() {
-    return fetch(`${this._baseUrl}/users`, {
+    return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       headers: this._headers,
     });
@@ -18,7 +22,7 @@ export default class Api {
     });
   }
 
-  create(data) {
+  createCard(data) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
@@ -26,16 +30,22 @@ export default class Api {
     });
   }
 
-  upadate(data) {
-    return fetch(`${this._baseUrl}/cards`, {
-      method: "PUT",
+  deleteCard(imageId) {
+    return fetch(`${this._baseUrl}/cards/${imageId}`, {
+      method: "DELETE",
       headers: this._headers,
-      body: JSON.stringify(data),
     });
   }
 
-  deleteCard(imageId) {
-    return fetch(`${this._baseUrl}/cards/${imageId}`, {
+  likeCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+      method: "PUT",
+      headers: this._headers,
+    });
+  }
+
+  unlikeCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
     });

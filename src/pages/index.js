@@ -8,7 +8,6 @@ import Api from "../components/Api.js";
 import {
   editbutton,
   buttonAdd,
-  initialCards,
   addNames,
   config,
 } from "../components/utils.js";
@@ -28,8 +27,7 @@ api
   .getUsers()
   .then((res) => res.json())
   .then((users) => {
-    userOwner = users.find((user) => user.id == config, ownerId);
-    // console.log("eu mesmo", userOwner);
+    userOwner = users;
   })
   .catch((error) => {
     console.log(`[GET Users] - Error: ${error}`);
@@ -60,7 +58,17 @@ editbutton.addEventListener("click", () => {
 // adicionando nome e imagem ao cartão
 function addImage(values) {
   if (values.title != "" && values.url != "") {
-    renderCards({ name: values.title, link: values.url });
+    api
+      .createCard({
+        name: values.title,
+        link: values.url,
+      })
+      .then((response) => response.json())
+      .then((card) => {
+        // console.log(card);
+
+        renderCards(card);
+      });
   }
 }
 
@@ -96,11 +104,32 @@ const popupWithImage = new PopupWithImage(
 );
 popupWithImage.setEventListeners();
 
+// Função para adicionar e remover like
+function handleApiLike(card, isLiked) {
+  // Se isLiked for true a função dá deslike no card
+  if (isLiked) {
+    return api
+      .unlikeCard(card._id)
+      .then((res) => res.json())
+      .then((card) => card);
+  } else {
+    // Se isLiked for false a função dá like no card
+    return api
+      .likeCard(card._id)
+      .then((res) => res.json())
+      .then((card) => card);
+  }
+}
+
+// Cria e adiciona um novo card na página
 function renderCards(card) {
   const newCard = new Card({
     card,
     cardSelector: config.cardTemplateId,
+    deleteCard,
+    userOwner,
     handleCardClick: (title, image) => popupWithImage.open(title, image),
+    handleLike: (card, isLiked) => handleApiLike(card, isLiked),
   }).generateCard();
 
   sectionCards.setItem(newCard);
@@ -113,3 +142,20 @@ api
     sectionCards = new Section({ items: cards, acao: renderCards }, config);
     sectionCards.renderItems();
   });
+
+// deleteCard
+function deleteCard(id) {
+  api
+    .deleteCard(id)
+    .then((res) => {
+      if (res.status == 204) {
+        return null;
+      } else {
+        return Promise.reject(res.status);
+      }
+    })
+    .catch((error) => {
+      console.log(`[DELETE Card] - Card Id: ${id}`);
+      console.log(`[DELETE Card] - Error: ${error}`);
+    });
+}
