@@ -4,10 +4,6 @@ export default class Api {
     this._headers = headers;
   }
 
-  // Profile() {
-  //   return fetch(`${this._baseUrl}`);
-  // }
-
   getUsers() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
@@ -47,6 +43,13 @@ export default class Api {
   unlikeCard(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
+      headers: this._headers,
+    });
+  }
+
+  profile(avatar) {
+    return fetch(`${this._baseUrl}/users/me/${avatar}`, {
+      method: "PATCH",
       headers: this._headers,
     });
   }

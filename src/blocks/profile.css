@@ -10,6 +10,11 @@
   object-fit: cover;
   border-radius: 50%;
 }
+.profile__image:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  /* background-image: url(../images/profile__add.png); */
+}
 .profile__card {
   max-width: 415px;
   display: grid;

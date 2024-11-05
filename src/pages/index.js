@@ -10,6 +10,7 @@ import {
   buttonAdd,
   addNames,
   config,
+  profileEditeAvt,
 } from "../components/utils.js";
 
 // criar instancias de Api
@@ -37,23 +38,15 @@ api
 const popupEditProfile = new PopupWithForm(".popup-edit", addNames, ".form");
 popupEditProfile.setEventListeners();
 
-const userForm = new FormValidator(
-  {
-    formElement: "form",
-    inputElement: "input",
-    showErrorMessage: "form__input-error-message",
-    inputInvalidErrorMessage: "form__input-invalid",
-    popupSaveButton: ".form__button",
-    formAddButton: "#create-button",
-  },
-  "#user-form"
-);
-
 // evento para abrir popup de editar perfil
 editbutton.addEventListener("click", () => {
   popupEditProfile.open();
   userForm.enableValidation();
 });
+
+// instancia para abrir popup de adicionar cartão
+const popupAddCard = new PopupWithForm(".popup-add", addImage, ".form-add");
+popupAddCard.setEventListeners();
 
 // adicionando nome e imagem ao cartão
 function addImage(values) {
@@ -72,9 +65,30 @@ function addImage(values) {
   }
 }
 
-// evento para abrir popup de adicionar cartão
-const popupAddCard = new PopupWithForm(".popup-add", addImage, ".form-add");
-popupAddCard.setEventListeners();
+//  abrir o popup para adicionar imagens
+buttonAdd.addEventListener("click", () => {
+  popupAddCard.open();
+  cardForm.enableValidation();
+});
+const popupEditAvatar = new PopupWithForm(
+  ".popup-edit-avatar",
+  addPhotoProfile,
+  ".form_edit-avatar"
+);
+popupEditAvatar.setEventListeners();
+// adicionando uma foto de perfil nova
+function addPhotoProfile(value) {
+  // fazer um querysecleter para capturar o elemento da img do avatar
+  const imgAvatar = document.querySelector(".profile__image");
+  // com esse elemento em mãos atribuir o value recebido por parametro ao src a imagem do avatar
+  imgAvatar.setAttribute("src", value.link);
+  popupEditAvatar.close();
+}
+
+// evento para abrir popup de editar foto de perfil
+profileEditeAvt.addEventListener("click", () => {
+  popupEditAvatar.open();
+});
 
 //                   valida os formularios
 
@@ -90,11 +104,17 @@ const cardForm = new FormValidator(
   "#card-form"
 );
 
-//  abrir o popup para adicionar imagens
-buttonAdd.addEventListener("click", () => {
-  popupAddCard.open();
-  cardForm.enableValidation();
-});
+const userForm = new FormValidator(
+  {
+    formElement: "form",
+    inputElement: "input",
+    showErrorMessage: "form__input-error-message",
+    inputInvalidErrorMessage: "form__input-invalid",
+    popupSaveButton: ".form__button",
+    formAddButton: "#create-button",
+  },
+  "#user-form"
+);
 
 // Instancia o PopupWithImage
 const popupWithImage = new PopupWithImage(

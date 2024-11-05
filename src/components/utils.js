@@ -1,6 +1,6 @@
 const nome = document.querySelector(".profile__name");
 const description = document.querySelector(".profile__description");
-import Card from "../components/Card.js";
+// import Card from "../components/Card.js";
 export const popupEdit = document.querySelector(".popup-edit");
 export const editbutton = document.querySelector(".profile__button");
 export const buttonclose = document.querySelector(".popup__button");
@@ -14,6 +14,8 @@ export const popupAddCard = document.querySelector(".popup-add");
 export const buttonCloseAdd = document.querySelector(".popup__close-add");
 export const popup = document.querySelector(".popup");
 const ownerId = "9cdb9bbdd07bc77e32b73ebe";
+export const popupEditAvatar = document.querySelector(".popup-edit-avatar");
+export const profileEditeAvt = document.querySelector(".profile-edit-avt");
 export const config = {
   cardTemplateId: "#card-template",
   cardsAdd,

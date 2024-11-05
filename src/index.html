@@ -21,7 +21,7 @@
         </nav>
       </header>
       <section class="profile">
-        <div>
+        <div class="profile-edit-avt">
           <img
             src="<%= require('./images/image_header.jpg')%>"
             alt=" imagem do perfil"
@@ -50,6 +50,60 @@
           />
         </button>
       </section>
+      <div class="popup popup-edit-avatar">
+        <div class="popup__container">
+          <button
+            type="button"
+            class="popup__button popup__button-avatar"
+          ></button>
+          <form class="form form_edit-avatar" name="edit-avatar" novalidate>
+            <h2 class="form__title">Alterar a foto do perfil</h2>
+
+            <fieldset class="form__fieldset">
+              <input
+                type="url"
+                name="link"
+                id="link-input"
+                class="form__input form__input_el_link"
+                placeholder="Link da imagem"
+                required
+              />
+              <button type="submit" name="submit" class="form__button">
+                Salvar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup_form_confirm">
+        <div class="popup__content popup__content_form">
+          <button type="button" class="popup__close"></button>
+
+          <form class="form form_confirm" name="confirm" novalidate>
+            <h2 class="form__title">Tem certeza?</h2>
+
+            <fieldset class="form__fieldset">
+              <input
+                type="text"
+                name="id"
+                id="id-input"
+                class="form__input form__input_el_id"
+                placeholder="id do cartão"
+                required
+              />
+              <span class="id-input-error form__input-error"></span>
+              <button
+                type="submit"
+                name="submit"
+                class="form__button form__button_del-confirm"
+              >
+                Sim
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
       <main class="cards">
         <template id="card-template">
           <div class="cards__container">

@@ -48,6 +48,9 @@
   right: 15px;
   cursor: pointer;
 }
+.cards__like-counter {
+  margin-left: 7px;
+}
 
 .cards__delete:hover {
   opacity: 60%;
