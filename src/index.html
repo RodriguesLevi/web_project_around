@@ -89,10 +89,13 @@
       </footer>
       <div class="popup popup-edit-avatar">
         <div class="popup__container">
-          <button
-            type="button"
-            class="popup__button popup__button-avatar"
-          ></button>
+          <button type="button" class="popup__button popup__button-avatar">
+            <img
+              class="popup__button-photo"
+              src="<%= require('./images/close__image.png')%>"
+              alt=""
+            />
+          </button>
           <form class="form form_edit-avatar" name="edit-avatar" novalidate>
             <h2 class="form__title">Alterar a foto do perfil</h2>
 
@@ -113,21 +116,19 @@
         </div>
       </div>
       <div class="popup popup-form-confirm">
-        <div class="popup__content popup__content_form">
-          <button type="button" class="popup__button popup__close"></button>
+        <div class="popup__container popup__content_form">
+          <button type="button" class="popup__button popup__close">
+            <img
+              class="popup__button-photo"
+              src="<%= require('./images/close__image.png')%>"
+              alt=""
+            />
+          </button>
 
-          <form class="form form_confirm" name="confirm" novalidate>
+          <form class="form_confirm" name="confirm" novalidate>
             <h2 class="form__title">Tem certeza?</h2>
 
             <fieldset class="form__fieldset">
-              <input
-                type="text"
-                name="id"
-                id="id-input"
-                class="form__input form__input_el_id"
-                placeholder="id do cartão"
-                required
-              />
               <span class="id-input-error form__input-error"></span>
               <button
                 type="submit"

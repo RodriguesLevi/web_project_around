@@ -10,6 +10,30 @@
   border: 1px solid #000000;
   border-radius: 10px;
 }
+.form_edit-avatar {
+  max-width: 430px;
+  width: 100%;
+  height: 330px;
+  gap: 0px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px 25px #00000026;
+  margin-bottom: 25px;
+  font-family: "Inter";
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+.form_confirm {
+  max-width: 430px;
+  width: 100%;
+  height: 210px;
+  gap: 0px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px 25px #00000026;
+  margin-bottom: 25px;
+  font-family: "Inter";
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
 
 .form__title {
   padding: 34px 36px 54px 64px;
@@ -43,7 +67,13 @@
   border-bottom: 1px solid #545454;
   margin-bottom: 29.74px;
   margin: 0;
-  /* margin-top: 40px; */
+}
+.form__input_el_link {
+  margin-bottom: 40px;
+}
+
+.form__input_el_id {
+  margin-bottom: 40px;
 }
 .form__input:focus {
   outline: none;

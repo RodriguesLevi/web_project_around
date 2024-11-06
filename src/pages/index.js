@@ -39,7 +39,6 @@ api
   .then((res) => res.json())
   .then((users) => {
     // userOwner = users;
-    console.log(users);
     userInfo.setUserInfo(users.name, users.about, users.avatar);
     const userObj = userInfo.getUserInfo();
 
