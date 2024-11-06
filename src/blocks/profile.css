@@ -13,7 +13,6 @@
 .profile__image:hover {
   cursor: pointer;
   opacity: 0.6;
-  /* background-image: url(../images/profile__add.png); */
 }
 .profile__card {
   max-width: 415px;
@@ -22,6 +21,9 @@
   gap: 10px 18px;
   margin: 0 30px;
   align-items: baseline;
+}
+.profile__avatar-edit {
+  position: absolute;
 }
 .profile__name {
   max-width: 373px;

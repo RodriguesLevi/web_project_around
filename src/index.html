@@ -28,6 +28,13 @@
             class="profile__image"
           />
         </div>
+        <div class="profile__avatar-edit">
+          <img
+            src="<%= require('./images/profile__avatar.png')%>"
+            alt="Editar avatar"
+            class="profile__edit-photo"
+          />
+        </div>
         <div class="profile__card">
           <h2 class="profile__name">Jacques Cousteau</h2>
           <div>
@@ -50,59 +57,6 @@
           />
         </button>
       </section>
-      <div class="popup popup-edit-avatar">
-        <div class="popup__container">
-          <button
-            type="button"
-            class="popup__button popup__button-avatar"
-          ></button>
-          <form class="form form_edit-avatar" name="edit-avatar" novalidate>
-            <h2 class="form__title">Alterar a foto do perfil</h2>
-
-            <fieldset class="form__fieldset">
-              <input
-                type="url"
-                name="link"
-                id="link-input"
-                class="form__input form__input_el_link"
-                placeholder="Link da imagem"
-                required
-              />
-              <button type="submit" name="submit" class="form__button">
-                Salvar
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <div class="popup popup_form_confirm">
-        <div class="popup__content popup__content_form">
-          <button type="button" class="popup__close"></button>
-
-          <form class="form form_confirm" name="confirm" novalidate>
-            <h2 class="form__title">Tem certeza?</h2>
-
-            <fieldset class="form__fieldset">
-              <input
-                type="text"
-                name="id"
-                id="id-input"
-                class="form__input form__input_el_id"
-                placeholder="id do cartão"
-                required
-              />
-              <span class="id-input-error form__input-error"></span>
-              <button
-                type="submit"
-                name="submit"
-                class="form__button form__button_del-confirm"
-              >
-                Sim
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </div>
 
       <main class="cards">
         <template id="card-template">
@@ -133,6 +87,59 @@
       <footer class="footer">
         <p>© 2024 Around The U.S.</p>
       </footer>
+      <div class="popup popup-edit-avatar">
+        <div class="popup__container">
+          <button
+            type="button"
+            class="popup__button popup__button-avatar"
+          ></button>
+          <form class="form form_edit-avatar" name="edit-avatar" novalidate>
+            <h2 class="form__title">Alterar a foto do perfil</h2>
+
+            <fieldset class="form__fieldset">
+              <input
+                type="url"
+                name="link"
+                id="link-input"
+                class="form__input form__input_el_link"
+                placeholder="Link da imagem"
+                required
+              />
+              <button type="submit" name="submit" class="form__button">
+                Salvar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup-form-confirm">
+        <div class="popup__content popup__content_form">
+          <button type="button" class="popup__button popup__close"></button>
+
+          <form class="form form_confirm" name="confirm" novalidate>
+            <h2 class="form__title">Tem certeza?</h2>
+
+            <fieldset class="form__fieldset">
+              <input
+                type="text"
+                name="id"
+                id="id-input"
+                class="form__input form__input_el_id"
+                placeholder="id do cartão"
+                required
+              />
+              <span class="id-input-error form__input-error"></span>
+              <button
+                type="submit"
+                name="submit"
+                class="form__button form__button_del-confirm"
+              >
+                Sim
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
     <div class="popup popup-image">
       <div class="popup__image-container popup__container">

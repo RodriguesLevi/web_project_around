@@ -7,14 +7,14 @@ export default class Card {
     card,
     cardSelector,
     handleCardClick,
-    deleteCard,
+    popupConfirmationOpen,
     handleLike,
     userOwner,
   }) {
     this._card = card;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
-    this._deleteCard = deleteCard;
+    this._popupConfirmationOpen = popupConfirmationOpen;
     this._handleLike = handleLike;
     this._userOwner = userOwner;
   }
@@ -94,8 +94,7 @@ export default class Card {
     this._element
       .querySelector(".cards__delete")
       .addEventListener("click", (evt) => {
-        this._deleteCard(this._card._id);
-        evt.target.parentElement.remove();
+        this._popupConfirmationOpen(this._card._id, evt.target.parentElement);
       });
 
     this._setEventListeners();

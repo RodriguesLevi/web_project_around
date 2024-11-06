@@ -1,5 +1,7 @@
-const nome = document.querySelector(".profile__name");
-const description = document.querySelector(".profile__description");
+export const nome = document.querySelector(".profile__name");
+export const description = document.querySelector(".profile__description");
+export const avatar = document.querySelector(".profile__image");
+
 // import Card from "../components/Card.js";
 export const popupEdit = document.querySelector(".popup-edit");
 export const editbutton = document.querySelector(".profile__button");
@@ -22,7 +24,6 @@ export const config = {
   ownerId,
 };
 
-// export const initialCards = [
 //   {
 //     name: "Vale de Yosemite",
 //     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
@@ -48,11 +49,3 @@ export const config = {
 //     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
 //   },
 // ];
-
-// adicionando nome e mudando informações
-export function addNames(values) {
-  if (values.name != "" && values.description != "") {
-    nome.textContent = values.name;
-    description.textContent = values.description;
-  }
-}
