@@ -3,6 +3,34 @@
   align-items: center;
   margin-top: 40px;
 }
+.profile-edit-avt {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+}
+
+.profile-edit-avt:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.profile__edit-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+.profile__edit-photo:hover {
+  background-image: url("../images/profile__avatar.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .profile__image {
   max-width: 120px;
@@ -22,9 +50,7 @@
   margin: 0 30px;
   align-items: baseline;
 }
-.profile__avatar-edit {
-  position: absolute;
-}
+
 .profile__name {
   max-width: 373px;
   gap: 0px;

@@ -6,8 +6,6 @@
     <meta name="author" content="Alisson Rodrigues" />
     <meta name="description" content="Around the U.S" />
     <meta name="keywords" content="html,css,JavaScript" />
-    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
-    <!-- <link rel="shortcul icon" href="favicon.ico" type="image/x-icon" /> -->
     <title>Around the U.S.</title>
   </head>
   <body>
@@ -27,13 +25,7 @@
             alt=" imagem do perfil"
             class="profile__image"
           />
-        </div>
-        <div class="profile__avatar-edit">
-          <img
-            src="<%= require('./images/profile__avatar.png')%>"
-            alt="Editar avatar"
-            class="profile__edit-photo"
-          />
+          <button alt="Editar avatar" class="profile__edit-photo"></button>
         </div>
         <div class="profile__card">
           <h2 class="profile__name">Jacques Cousteau</h2>
@@ -96,7 +88,12 @@
               alt=""
             />
           </button>
-          <form class="form form_edit-avatar" name="edit-avatar" novalidate>
+          <form
+            id="avatar-form"
+            class="form form_edit-avatar"
+            name="edit-avatar"
+            novalidate
+          >
             <h2 class="form__title">Alterar a foto do perfil</h2>
 
             <fieldset class="form__fieldset">
@@ -108,7 +105,7 @@
                 placeholder="Link da imagem"
                 required
               />
-              <button type="submit" name="submit" class="form__button">
+              <button disabled type="submit" name="submit" class="form__button">
                 Salvar
               </button>
             </fieldset>

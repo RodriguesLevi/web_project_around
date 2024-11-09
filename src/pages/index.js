@@ -124,9 +124,10 @@ buttonAdd.addEventListener("click", () => {
   cardForm.enableValidation();
 });
 
-// evento para abrir popup de editar foto de perfil
+// abrir popup de editar foto de perfil
 profileEditeAvt.addEventListener("click", () => {
   popupEditAvatar.open();
+  avatarForm.enableValidation();
 });
 
 //                   valida os formularios
@@ -153,6 +154,18 @@ const userForm = new FormValidator(
     formAddButton: "#create-button",
   },
   "#user-form"
+);
+
+const avatarForm = new FormValidator(
+  {
+    formElement: "form",
+    inputElement: "input",
+    showErrorMessage: "form__input-error-message",
+    inputInvalidErrorMessage: "form__input-invalid",
+    popupSaveButton: ".form__button",
+    formAddButton: "#create-button",
+  },
+  "#avatar-form"
 );
 
 // Instancia o PopupWithImage
@@ -209,7 +222,8 @@ function deleteCard(id, cardElement) {
     .deleteCard(id)
     .then((res) => {
       cardElement.remove();
-      if (res.status == 204) {
+
+      if (res.status == 200) {
         return null;
       } else {
         return Promise.reject(res.status);
