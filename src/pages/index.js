@@ -59,6 +59,7 @@ popupWithConfirmation.setEventListeners();
 
 // adicionando nome e mudando informações
 function addNames(values) {
+  const newButtonSaving = document.querySelector("#button-save");
   if (values.name != "" && values.description != "") {
     const userObj = userInfo.getUserInfo();
     userInfo.setUserInfo(values.name, values.description, userObj.avatar);
@@ -86,17 +87,24 @@ popupAddCard.setEventListeners();
 
 // adicionando nome e imagem ao cartão
 function addImage(values) {
+  const newButtonCreate = document.querySelector("#create-button");
   if (values.title != "" && values.url != "") {
     api
       .createCard({
         name: values.title,
         link: values.url,
       })
-      .then((response) => response.json())
-      .then((card) => {
-        // console.log(card);
+      .then((response) => {
+        newButtonCreate.textContent = "Criando...";
+        console.log(newButtonCreate.textContent);
 
+        return response.json();
+      })
+      .then((card) => {
         renderCards(card);
+      })
+      .finally(() => {
+        newButtonCreate.textContent = "Criar";
       });
   }
 }
