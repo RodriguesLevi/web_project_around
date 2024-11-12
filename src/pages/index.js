@@ -60,12 +60,17 @@ popupWithConfirmation.setEventListeners();
 // adicionando nome e mudando informações
 function addNames(values) {
   const newButtonSaving = document.querySelector("#button-save");
+  newButtonSaving.textContent = "Salvando...";
   if (values.name != "" && values.description != "") {
     const userObj = userInfo.getUserInfo();
     userInfo.setUserInfo(values.name, values.description, userObj.avatar);
 
     // chamar a api de edição de perfil
-    api.editProfile({ name: values.name, about: values.description });
+    api
+      .editProfile({ name: values.name, about: values.description })
+      .finally(() => {
+        newButtonSaving.textContent = "Salvar";
+      });
 
     popupEditProfile.close();
   }
@@ -88,6 +93,7 @@ popupAddCard.setEventListeners();
 // adicionando nome e imagem ao cartão
 function addImage(values) {
   const newButtonCreate = document.querySelector("#create-button");
+  newButtonCreate.textContent = "Criando...";
   if (values.title != "" && values.url != "") {
     api
       .createCard({
@@ -95,9 +101,6 @@ function addImage(values) {
         link: values.url,
       })
       .then((response) => {
-        newButtonCreate.textContent = "Criando...";
-        console.log(newButtonCreate.textContent);
-
         return response.json();
       })
       .then((card) => {

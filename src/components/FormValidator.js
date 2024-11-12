@@ -54,8 +54,6 @@ export default class FormValidator {
   _setEventListeners() {
     this._disableButton(this._form);
     const button = this._form.querySelector(this._config.popupSaveButton);
-    // button.classList.add("form__button_disabled");
-    // button.removeAttribute("disabled");
     const inputs = Array.from(
       this._form.querySelectorAll(this._config.inputElement)
     );
